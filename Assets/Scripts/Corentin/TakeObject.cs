@@ -29,7 +29,7 @@ public class TakeObject : MonoBehaviour
 
         Ray ray = mainCamera.ScreenPointToRay(Input.mousePosition);
 
-        if(Physics.Raycast(ray, out hit, inspectRange /* , layerMask */))
+        if(Physics.Raycast(ray, out hit, inspectRange, layerMask))
         {
             Debug.DrawRay(mainCamera.transform.position, ray.direction * hit.distance, Color.yellow);
             Debug.Log("Did hit !");
