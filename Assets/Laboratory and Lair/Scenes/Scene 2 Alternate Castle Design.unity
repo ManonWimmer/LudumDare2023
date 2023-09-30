@@ -10524,10 +10524,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8727860093651854328, guid: 971b85d25ab24d942a9655ce45299348,
+    - target: {fileID: 7810033944473543180, guid: 971b85d25ab24d942a9655ce45299348,
         type: 3}
-      propertyPath: m_Camera
-      value: 
+      propertyPath: gravity
+      value: 1000
       objectReference: {fileID: 0}
     - target: {fileID: 8727860093651854328, guid: 971b85d25ab24d942a9655ce45299348,
         type: 3}
@@ -10549,26 +10549,6 @@ PrefabInstance:
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 640536586}
-    - target: {fileID: 8727860093651854328, guid: 971b85d25ab24d942a9655ce45299348,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[0].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MovePressed
-      objectReference: {fileID: 0}
-    - target: {fileID: 8727860093651854328, guid: 971b85d25ab24d942a9655ce45299348,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[1].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: InteractPressed
-      objectReference: {fileID: 0}
-    - target: {fileID: 8727860093651854328, guid: 971b85d25ab24d942a9655ce45299348,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[2].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MouseXMoved
-      objectReference: {fileID: 0}
-    - target: {fileID: 8727860093651854328, guid: 971b85d25ab24d942a9655ce45299348,
-        type: 3}
-      propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: MouseYMoved
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
