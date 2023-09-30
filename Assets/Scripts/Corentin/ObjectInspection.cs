@@ -9,7 +9,7 @@ public class ObjectInspection : MonoBehaviour
     [SerializeField] private float inspectSpeed;
 
     [SerializeField] private GameObject objectInspected;
-    private bool isInspecting;
+    [SerializeField] private bool isInspecting;
     [SerializeField] private Canvas inspectorCanvas;
     [SerializeField] private GameObject parentObject;
 
@@ -20,7 +20,16 @@ public class ObjectInspection : MonoBehaviour
 
     private FPSController fpsController;
 
+    [SerializeField] private int miminumInspection;
+
+    //[SerializeField] private bool inspectionPressed;
+
+    private TakeObject takeObject;
+
+
     //Properties
+    public GameObject ObjectInspected { get => objectInspected; set => objectInspected = value; }
+
 
     //Methods
     public void InspectObject(GameObject objectSelectionned)
@@ -37,8 +46,15 @@ public class ObjectInspection : MonoBehaviour
     {
         isInspecting = false;
         inspectorCanvas.enabled = false;
+
+        Destroy(objectInspected);
         objectInspected = null;
+
+        Debug.Log("fin de l'inspection");
+
         fpsController.enabled = true;
+
+        //mettre à jour les valeurs
     }
 
 
@@ -51,6 +67,8 @@ public class ObjectInspection : MonoBehaviour
     void Start()
     {
         fpsController = GetComponent<FPSController>();
+
+        takeObject = GetComponent<TakeObject>();
     }
 
     // Update is called once per frame
@@ -60,6 +78,13 @@ public class ObjectInspection : MonoBehaviour
         {
             buttonTest = false;
             InspectObject(objectInspected);
+        }
+
+        //takeObject.LeftPressed = InputManager.GetInstance().GetInteractPressed();
+
+        if(takeObject.LeftPressed)
+        {
+            Debug.Log(takeObject.LeftPressed);
         }
     }
 
@@ -74,6 +99,16 @@ public class ObjectInspection : MonoBehaviour
             rotationObjectY += -mouseX * inspectSpeed;
 
             objectInspected.transform.localRotation = Quaternion.Euler(rotationObjectX, rotationObjectY, 0);
+
+            if (takeObject.LeftPressed && miminumInspection >= 1)
+            {
+                InspectObjectEnd();
+                miminumInspection = 0;
+            }
+            else if(takeObject.LeftPressed)
+            {
+                miminumInspection++ ;
+            }
 
             yield return null;
         }
