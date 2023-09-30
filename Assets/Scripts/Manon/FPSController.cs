@@ -5,6 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(CharacterController))]
 public class FPSController : MonoBehaviour
 {
+    // ----- VARIABLES ----- //
     [SerializeField] Camera playerCamera;
     [SerializeField] float walkSpeed = 6f;
     [SerializeField] float runSpeed = 12f;
@@ -18,6 +19,7 @@ public class FPSController : MonoBehaviour
     private CharacterController characterController;
 
     private bool canMove = true;
+    // ----- VARIABLES ----- //
 
     void Start()
     {
