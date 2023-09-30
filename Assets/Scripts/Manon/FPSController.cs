@@ -15,6 +15,7 @@ public class FPSController : MonoBehaviour
     [SerializeField] float defaultHeight = 2f;
 
     private Vector3 moveDirection = Vector3.zero;
+    private bool interactPressed = false;
     private float rotationX = 0;
     private CharacterController characterController;
 
@@ -30,6 +31,22 @@ public class FPSController : MonoBehaviour
 
     void Update()
     {
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+        interactPressed = InputManager.GetInstance().GetInteractPressed();
+        if (Physics.Raycast(ray, out hit, 100) && interactPressed)
+        {
+            Transform tempTransform;
+            tempTransform = hit.transform;
+
+            if(tempTransform.gameObject.CompareTag("Drawer"))
+            {
+                Debug.Log("DRAWER");
+                tempTransform.gameObject.GetComponent<Drawer>().ToggleDrawer();
+            }
+            
+        }
+
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
 

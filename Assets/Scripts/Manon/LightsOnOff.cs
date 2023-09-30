@@ -10,11 +10,13 @@ public class LightsOnOff : MonoBehaviour
     [SerializeField] private Material lightsOnMaterial;
     [SerializeField] private Material lightsOffMaterial;
 
+    [SerializeField] private GameObject refletVert;
+
     [SerializeField] private List<GameObject> allLightsDefaultOn = new List<GameObject>();
 
     [SerializeField] private bool lightsOn = false;
 
-    private float count = 0;
+    private float count = 0; // temp
     // ----- VARIABLES ----- //
 
     private void Start()
@@ -42,7 +44,9 @@ public class LightsOnOff : MonoBehaviour
             // Turn light on / off :
             allLightsDefaultOn[i].GetComponentInChildren<Light>().enabled = lightsOn;
         }
-
+        // Reflet vert :
+        refletVert.GetComponent<Light>().enabled = lightsOn;
+        
         lightsOn = !lightsOn;
 
         count++;
