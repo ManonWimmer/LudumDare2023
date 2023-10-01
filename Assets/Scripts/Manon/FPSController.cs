@@ -42,7 +42,7 @@ public class FPSController : MonoBehaviour
         interactPressed = InputManager.GetInstance().GetInteractPressed();
         if (!IsInspecting)
         {
-            if (Physics.Raycast(ray, out hit, 100) && interactPressed)
+            if (Physics.Raycast(ray, out hit, 200) && interactPressed)
             {
                 Debug.DrawRay(Camera.main.transform.position, ray.direction * hit.distance, Color.yellow);
 
