@@ -8,7 +8,6 @@ public class EnigmeBinaire : MonoBehaviour
 {
     [SerializeField] GameObject bone0;
     [SerializeField] GameObject bone1;
-    private string codeBinaire = "1001";
     private string codePlayer="";
     [SerializeField] TextMeshProUGUI textMeshPro;
     [SerializeField] TextMeshProUGUI textMeshProPW;
@@ -50,10 +49,38 @@ public class EnigmeBinaire : MonoBehaviour
             }
             else if (codePlayer == "111")
             {
-                textMeshProPW.text += "";
+                textMeshProPW.text += "7";
             }
             codePlayer = "";
-            textMeshPro.text = codePlayer;
+            StartCoroutine(MyCoroutine());
+            IEnumerator MyCoroutine()
+            {
+                yield return new WaitForSeconds(1.0f);
+                textMeshPro.text = codePlayer;
+            }
+            
+            if(textMeshProPW.text=="206") 
+            {
+                StartCoroutine(MyCoroutine1());
+                IEnumerator MyCoroutine1()
+                {
+                    yield return new WaitForSeconds(1.0f);
+                    textMeshProPW.text = "Open";
+                    
+                }
+                Debug.Log("Win");
+            }else if(textMeshProPW.text.Length == 3 && textMeshProPW.text != "206")
+            {
+                StartCoroutine(MyCoroutine2());
+                IEnumerator MyCoroutine2()
+                {
+                    yield return new WaitForSeconds(1.0f);
+                    textMeshProPW.text = "Close";
+                    yield return new WaitForSeconds(3.0f);
+                    textMeshProPW.text = "";
+                }
+            }
+
         }
     }
 }
