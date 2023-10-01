@@ -24,12 +24,15 @@ public class LightsOnOff : MonoBehaviour
     [SerializeField] private float timeMultiplier;
 
     private Dictionary<char, string> morseLetters = new Dictionary<char, string>();
+
+    private bool isMorseRunning = true;
     // ----- VARIABLES ----- //
 
     private void Start()
     {
         //StartCoroutine(FlickeringLights());
         InitializeMorseDico();
+        isMorseRunning = true;
         StartCoroutine(MorseCode());
     }
     
@@ -73,44 +76,57 @@ public class LightsOnOff : MonoBehaviour
         morseLetters.Add('Z', "--..");
     }
 
+    public void StopMorse()
+    {
+        isMorseRunning = false;
+    }
+
     private IEnumerator MorseCode()
     {
-        for (int x = 0; x < morseCodeList.Count; x++)
+        while (isMorseRunning)
         {
-            string morseCode = morseCodeList[x]; // Chaque mot
-
-            for (int i = 0; i < morseCode.Length; i++)
+            for (int x = 0; x < morseCodeList.Count; x++)
             {
-                string letterMorse;
-                if (!morseLetters.TryGetValue(morseCode[i], out letterMorse))
+                string morseCode = morseCodeList[x]; // Chaque mot
+
+                for (int i = 0; i < morseCode.Length; i++)
                 {
-                    Debug.Log("erreur lettre morse : " + morseCode[i]);
-                }
-                else
-                {
-                    for (int j = 0; j < letterMorse.Length; j++)
+                    string letterMorse;
+                    if (!morseLetters.TryGetValue(morseCode[i], out letterMorse))
                     {
-                        if (letterMorse[j] == '.')
-                        {
-                            // 1 Ligth on
-                            yield return StartCoroutine(TurnOnLights(1 * timeMultiplier));
-                        }
-                        else if (letterMorse[j] == '-')
-                        {
-                            // 3 light on
-                            yield return StartCoroutine(TurnOnLights(3 * timeMultiplier));
-                        }
-                        // 1 light off
-                        yield return StartCoroutine(TurnOffLights(1 * timeMultiplier));
+                        Debug.Log("erreur lettre morse : " + morseCode[i]);
                     }
-                    // 3 light off
-                    yield return StartCoroutine(TurnOffLights(3 * timeMultiplier));
+                    else
+                    {
+                        for (int j = 0; j < letterMorse.Length; j++)
+                        {
+                            if (letterMorse[j] == '.' && isMorseRunning)
+                            {
+                                // 1 Ligth on
+                                yield return StartCoroutine(TurnOnLights(1 * timeMultiplier));
+                            }
+                            else if (letterMorse[j] == '-' && isMorseRunning)
+                            {
+                                // 3 light on
+                                yield return StartCoroutine(TurnOnLights(3 * timeMultiplier));
+                            }
+                            // 1 light off
+                            if (isMorseRunning)
+                                yield return StartCoroutine(TurnOffLights(1 * timeMultiplier));
+                        }
+                        // 3 light off
+                        if (isMorseRunning)
+                            yield return StartCoroutine(TurnOffLights(3 * timeMultiplier));
+                    }
+                }
+                // 7 light off
+                if (isMorseRunning)
+                {
+                    yield return StartCoroutine(TurnOffLights(7 * timeMultiplier));
+                    StartCoroutine(MorseCode());
                 }
             }
-            // 7 light off
-            yield return StartCoroutine(TurnOffLights(7 * timeMultiplier));
-            StartCoroutine(MorseCode());
-        }
+        }  
     }
 
     private IEnumerator TurnOnLights(float time)
@@ -154,6 +170,8 @@ public class LightsOnOff : MonoBehaviour
 
         yield return new WaitForSeconds(time);
     }
+
+
 
 
     // Clignoter lights pendant un count de fois (tester les lights)

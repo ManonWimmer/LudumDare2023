@@ -12057,6 +12057,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   openOffice: {fileID: 953176018}
+  lightsOnOff: {fileID: 376711447}
 --- !u!65 &676649001
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -37422,7 +37423,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finalClosedZPosition: 0
   finalRotateYPosition: 90
-  smoothTimeRotate: 0.5
+  smoothTimeRotate: 0.1
   smoothTimePull: 5
   drawerType: 1
   canBeOpened: 0
@@ -37844,7 +37845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   finalClosedZPosition: 0
   finalRotateYPosition: -90
-  smoothTimeRotate: 0.5
+  smoothTimeRotate: 0.1
   smoothTimePull: 5
   drawerType: 1
   canBeOpened: 0
