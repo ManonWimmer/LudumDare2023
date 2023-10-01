@@ -30,6 +30,11 @@ public class ClipBoardInteraction : MonoBehaviour
     [SerializeField] private TextMeshProUGUI info2;
     [SerializeField] private TextMeshProUGUI info3;
 
+    //[SerializeField] private Vector3 originalPosition;
+    //[SerializeField] private Quaternion originalRotation;
+
+    [SerializeField] private Transform positionClipBoardStart;
+
 
 
     //properties
@@ -43,13 +48,19 @@ public class ClipBoardInteraction : MonoBehaviour
             isOpen = true;
             inspectorCanvas.enabled = true;
 
-            GameObject instance = Instantiate(clipBoard, parentObject.transform.position, Quaternion.identity, parentObject.transform);
-            clipBoardInstance = instance;
-            clipBoardInstance.GetComponent<Collider>().isTrigger = true;
-            clipBoardInstance.transform.localRotation = Quaternion.Euler(90, 180, 0);
-            clipBoardInstance.transform.localScale *= 2;
+            //GameObject instance = Instantiate(clipBoard, parentObject.transform.position, Quaternion.identity, parentObject.transform);
+            //clipBoardInstance = instance;
+            //clipBoardInstance.GetComponent<Collider>().isTrigger = true;
+            //clipBoardInstance.transform.localRotation = Quaternion.Euler(90, 180, 0);
+            //clipBoardInstance.transform.localScale *= 2;
 
-            
+            clipBoard.transform.parent = parentObject.transform;
+
+            clipBoard.transform.localPosition = new Vector3(0, 0, 0);
+
+            clipBoard.transform.localRotation = Quaternion.Euler(90, 180, 0);
+
+            clipBoard.transform.localScale *= 2;
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -66,9 +77,16 @@ public class ClipBoardInteraction : MonoBehaviour
         isOpen = false;
         inspectorCanvas.enabled = false;
 
+        clipBoard.transform.localScale /= 2;
+
+        clipBoard.transform.parent = null;
+
+        clipBoard.transform.position = positionClipBoardStart.position;
+
+        clipBoard.transform.rotation = positionClipBoardStart.rotation;
         
-        Destroy(clipBoardInstance);
-        clipBoardInstance=null;
+        //Destroy(clipBoardInstance);
+        //clipBoardInstance=null;
 
         Debug.Log("fin modification ClipBoard");
 
@@ -238,19 +256,27 @@ public class ClipBoardInteraction : MonoBehaviour
 
     private void Awake()
     {
-        fpsController = GetComponent<FPSController>();
+        //originalPosition = new Vector3(transform.position.x, transform.position.y, transform.position.z);
+
+        //originalRotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
+
+        clipBoard.transform.position = positionClipBoardStart.position;
+
+        clipBoard.transform.rotation = positionClipBoardStart.rotation;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-
+        fpsController = GetComponent<FPSController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        weapon = info1.text;
+        suspect = info2.text;
+        place = info3.text;
     }
 
     IEnumerator ClipBoardMod()
@@ -264,7 +290,7 @@ public class ClipBoardInteraction : MonoBehaviour
 
             positionY = Mathf.Clamp(positionY, -0.5f, 0.5f);
 
-            //clipBoardInstance.transform.localPosition = new Vector3 (0, positionY, 0);
+            clipBoard.transform.localPosition = new Vector3 (0, positionY, 0);
 
 
             if (fpsController.InteractPressed)
