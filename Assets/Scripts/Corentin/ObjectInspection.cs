@@ -37,8 +37,11 @@ public class ObjectInspection : MonoBehaviour
     {
         isInspecting = true;
         inspectorCanvas.enabled = true;
+
         GameObject instance = Instantiate(objectSelectionned, parentObject.transform.position, Quaternion.identity, parentObject.transform);
         objectInspected = instance;
+        objectInspected.GetComponent<Collider>().isTrigger = true;
+
         fpsController.enabled = false;
 
         StartCoroutine(Inspection());
@@ -75,6 +78,8 @@ public class ObjectInspection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        fpsController.IsInspecting = isInspecting;
+
         if(buttonTest)
         {
             buttonTest = false;

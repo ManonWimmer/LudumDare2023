@@ -61,6 +61,8 @@ public class TakeObject : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //Cette partie sert à connaitre InteractPressed même quand le fpsController est désactivé par l'inspection
+
         if (fPSController.enabled == true)
         {
             leftPressed = false;

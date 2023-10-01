@@ -21,7 +21,10 @@ public class FPSController : MonoBehaviour
 
     private bool canMove = true;
 
+    private bool isInspecting;
+
     public bool InteractPressed { get => interactPressed; set => interactPressed = value; }
+    public bool IsInspecting { get => isInspecting; set => isInspecting = value; }
 
     // ----- VARIABLES ----- //
 
@@ -37,7 +40,7 @@ public class FPSController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         interactPressed = InputManager.GetInstance().GetInteractPressed();
-        if (!GetComponent<ObjectInspection>().IsInspecting)
+        if (!IsInspecting)
         {
             if (Physics.Raycast(ray, out hit, 100) && interactPressed)
             {
@@ -57,10 +60,6 @@ public class FPSController : MonoBehaviour
                     GetComponent<ObjectInspection>().InspectObject(tempTransform.gameObject);
                 }
             }
-        }
-        else
-        {
-            GetComponent<ObjectInspection>().InspectObjectEnd();
         }
         
 
