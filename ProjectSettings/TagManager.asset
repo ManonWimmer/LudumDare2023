@@ -8,6 +8,7 @@ TagManager:
   - passwordChest
   - Drawer
   - Interactive
+  - ClipBoard
   layers:
   - Default
   - TransparentFX
