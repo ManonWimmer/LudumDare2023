@@ -23,7 +23,7 @@ public class OpenOffice : MonoBehaviour
 
     }
 
-    private void ToggleOffice()
+    public void ToggleOffice()
     {
         leftDoor.ToggleDrawer();
         rightDoor.ToggleDrawer();

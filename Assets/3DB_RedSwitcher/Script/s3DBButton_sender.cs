@@ -18,6 +18,7 @@ public class s3DBButton_sender : MonoBehaviour {
 			msg.actions = SendToGameObjects [c].actions;
 			msg.state = SendToGameObjects [c].Switch;
 
+
 			SendToGameObjects [c].receiver.SendMessage ("button", msg);
 				
 			}
