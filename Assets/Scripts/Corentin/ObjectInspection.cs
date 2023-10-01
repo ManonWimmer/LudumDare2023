@@ -29,6 +29,7 @@ public class ObjectInspection : MonoBehaviour
 
     //Properties
     public GameObject ObjectInspected { get => objectInspected; set => objectInspected = value; }
+    public bool IsInspecting { get => isInspecting; set => isInspecting = value; }
 
 
     //Methods
@@ -100,7 +101,7 @@ public class ObjectInspection : MonoBehaviour
 
             objectInspected.transform.localRotation = Quaternion.Euler(rotationObjectX, rotationObjectY, 0);
 
-            if (takeObject.LeftPressed && miminumInspection >= 1)
+            if (miminumInspection >= 1)
             {
                 InspectObjectEnd();
                 miminumInspection = 0;
