@@ -22,6 +22,8 @@ public class ObjectInspection : MonoBehaviour
 
     [SerializeField] private int miminumInspection;
 
+    [SerializeField] private ClipBoardInteraction clipBoardInteraction;
+
     //[SerializeField] private bool inspectionPressed;
 
     private TakeObject takeObject;
@@ -35,16 +37,19 @@ public class ObjectInspection : MonoBehaviour
     //Methods
     public void InspectObject(GameObject objectSelectionned)
     {
-        isInspecting = true;
-        inspectorCanvas.enabled = true;
+        if (!clipBoardInteraction.IsOpen)
+        {
+            isInspecting = true;
 
-        GameObject instance = Instantiate(objectSelectionned, parentObject.transform.position, Quaternion.identity, parentObject.transform);
-        objectInspected = instance;
-        objectInspected.GetComponent<Collider>().isTrigger = true;
+            inspectorCanvas.enabled = true;
 
-        fpsController.enabled = false;
+            GameObject instance = Instantiate(objectSelectionned, parentObject.transform.position, Quaternion.identity, parentObject.transform);
+            objectInspected = instance;
+            objectInspected.GetComponent<Collider>().isTrigger = true;
 
-        StartCoroutine(Inspection());
+
+            StartCoroutine(Inspection());
+        }
     }
     public void InspectObjectEnd()
     {
@@ -56,7 +61,6 @@ public class ObjectInspection : MonoBehaviour
 
         Debug.Log("fin de l'inspection");
 
-        fpsController.enabled = true;
 
         //mettre à jour les valeurs
     }
@@ -78,7 +82,14 @@ public class ObjectInspection : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        fpsController.IsInspecting = isInspecting;
+        if (isInspecting || clipBoardInteraction.IsOpen)
+        {
+            fpsController.IsInspecting = true;
+        }
+        else
+        {
+            fpsController.IsInspecting = false;
+        }
 
         if(buttonTest)
         {
@@ -88,9 +99,9 @@ public class ObjectInspection : MonoBehaviour
 
         //takeObject.LeftPressed = InputManager.GetInstance().GetInteractPressed();
 
-        if(takeObject.LeftPressed)
+        if(fpsController.InteractPressed)
         {
-            Debug.Log(takeObject.LeftPressed);
+            Debug.Log(fpsController.InteractPressed);
         }
     }
 
@@ -106,12 +117,12 @@ public class ObjectInspection : MonoBehaviour
 
             objectInspected.transform.localRotation = Quaternion.Euler(rotationObjectX, rotationObjectY, 0);
 
-            if (miminumInspection >= 1)
+            if (miminumInspection > 1)
             {
                 InspectObjectEnd();
                 miminumInspection = 0;
             }
-            else if(takeObject.LeftPressed)
+            else if(fpsController.InteractPressed)
             {
                 miminumInspection++ ;
             }

@@ -67,39 +67,41 @@ public class FPSController : MonoBehaviour
             }
         }
         
+        if(!isInspecting)
+        {
+            Vector3 forward = transform.TransformDirection(Vector3.forward);
+            Vector3 right = transform.TransformDirection(Vector3.right);
 
-        Vector3 forward = transform.TransformDirection(Vector3.forward);
-        Vector3 right = transform.TransformDirection(Vector3.right);
+            Vector2 inputDirection = InputManager.GetInstance().GetMoveDirection();
 
-        Vector2 inputDirection = InputManager.GetInstance().GetMoveDirection();
-
-        bool isRunning = Input.GetKey(KeyCode.LeftShift);
-        float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * inputDirection.y : 0;
-        float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * inputDirection.x : 0;
-        float movementDirectionY = moveDirection.y;
-        moveDirection = (forward * curSpeedX) + (right * curSpeedY);
+            bool isRunning = Input.GetKey(KeyCode.LeftShift);
+            float curSpeedX = canMove ? (isRunning ? runSpeed : walkSpeed) * inputDirection.y : 0;
+            float curSpeedY = canMove ? (isRunning ? runSpeed : walkSpeed) * inputDirection.x : 0;
+            float movementDirectionY = moveDirection.y;
+            moveDirection = (forward * curSpeedX) + (right * curSpeedY);
 
         
-        if (!characterController.isGrounded)
-        {
-            moveDirection.y -= gravity * Time.deltaTime;
-        }
+            if (!characterController.isGrounded)
+            {
+                moveDirection.y -= gravity * Time.deltaTime;
+            }
 
-        characterController.height = defaultHeight;
-        walkSpeed = 6f;
-        runSpeed = 12f;
+            characterController.height = defaultHeight;
+            walkSpeed = 6f;
+            runSpeed = 12f;
 
-        characterController.Move(moveDirection * Time.deltaTime);
+            characterController.Move(moveDirection * Time.deltaTime);
 
-        if (canMove)
-        {
-            float mouseX = InputManager.GetInstance().GetMouseXDelta();
-            float mouseY = InputManager.GetInstance().GetMouseYDelta();
+            if (canMove)
+            {
+                float mouseX = InputManager.GetInstance().GetMouseXDelta();
+                float mouseY = InputManager.GetInstance().GetMouseYDelta();
 
-            rotationX += -mouseY * lookSpeed;
-            rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
-            playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
-            transform.rotation *= Quaternion.Euler(0, mouseX * lookSpeed, 0);
+                rotationX += -mouseY * lookSpeed;
+                rotationX = Mathf.Clamp(rotationX, -lookXLimit, lookXLimit);
+                playerCamera.transform.localRotation = Quaternion.Euler(rotationX, 0, 0);
+                transform.rotation *= Quaternion.Euler(0, mouseX * lookSpeed, 0);
+            }
         }
     }
 }
