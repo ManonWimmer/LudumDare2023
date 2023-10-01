@@ -46,6 +46,7 @@ public class ObjectInspection : MonoBehaviour
             GameObject instance = Instantiate(objectSelectionned, parentObject.transform.position, Quaternion.identity, parentObject.transform);
             objectInspected = instance;
             objectInspected.GetComponent<Collider>().isTrigger = true;
+            objectInspected.transform.localScale *= 2;
 
 
             StartCoroutine(Inspection());
