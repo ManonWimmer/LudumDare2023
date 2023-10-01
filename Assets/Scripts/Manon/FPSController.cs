@@ -20,6 +20,9 @@ public class FPSController : MonoBehaviour
     private CharacterController characterController;
 
     private bool canMove = true;
+
+    public bool InteractPressed { get => interactPressed; set => interactPressed = value; }
+
     // ----- VARIABLES ----- //
 
     void Start()
@@ -44,7 +47,7 @@ public class FPSController : MonoBehaviour
                 Debug.Log("DRAWER");
                 tempTransform.gameObject.GetComponent<Drawer>().ToggleDrawer();
             }
-            
+            // else if compare tag interactive
         }
 
         Vector3 forward = transform.TransformDirection(Vector3.forward);
