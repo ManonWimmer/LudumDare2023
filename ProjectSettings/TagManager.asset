@@ -9,6 +9,8 @@ TagManager:
   - Drawer
   - Interactive
   - ClipBoard
+  - Levier0
+  - Levier1
   layers:
   - Default
   - TransparentFX
