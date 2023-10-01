@@ -19,7 +19,7 @@ public class LightsOnOff : MonoBehaviour
     private float count = 0; // temp
 
     // MORSE
-    [SerializeField] private string morseCode = "SOS";
+    [SerializeField] private List<String> morseCodeList = new List<String>();
 
     [SerializeField] private float timeMultiplier;
 
@@ -75,37 +75,42 @@ public class LightsOnOff : MonoBehaviour
 
     private IEnumerator MorseCode()
     {
-        for (int i = 0; i < morseCode.Length; i++)
+        for (int x = 0; x < morseCodeList.Count; x++)
         {
-            string letterMorse;
-            if (!morseLetters.TryGetValue(morseCode[i], out letterMorse))
+            string morseCode = morseCodeList[x]; // Chaque mot
+
+            for (int i = 0; i < morseCode.Length; i++)
             {
-                Debug.Log("erreur lettre morse : " + morseCode[i]);
-            }
-            else
-            {
-                for (int j = 0; j < letterMorse.Length; j++)
+                string letterMorse;
+                if (!morseLetters.TryGetValue(morseCode[i], out letterMorse))
                 {
-                    if (letterMorse[j] == '.')
-                    {
-                        // 1 Ligth on
-                        yield return StartCoroutine(TurnOnLights(1 * timeMultiplier));
-                    }
-                    else if (letterMorse[j] == '-')
-                    {
-                        // 3 light on
-                        yield return StartCoroutine(TurnOnLights(3 * timeMultiplier));
-                    }
-                    // 1 light off
-                    yield return StartCoroutine(TurnOffLights(1 * timeMultiplier));
+                    Debug.Log("erreur lettre morse : " + morseCode[i]);
                 }
-                // 3 light off
-                yield return StartCoroutine(TurnOffLights(3 * timeMultiplier));
+                else
+                {
+                    for (int j = 0; j < letterMorse.Length; j++)
+                    {
+                        if (letterMorse[j] == '.')
+                        {
+                            // 1 Ligth on
+                            yield return StartCoroutine(TurnOnLights(1 * timeMultiplier));
+                        }
+                        else if (letterMorse[j] == '-')
+                        {
+                            // 3 light on
+                            yield return StartCoroutine(TurnOnLights(3 * timeMultiplier));
+                        }
+                        // 1 light off
+                        yield return StartCoroutine(TurnOffLights(1 * timeMultiplier));
+                    }
+                    // 3 light off
+                    yield return StartCoroutine(TurnOffLights(3 * timeMultiplier));
+                }
             }
+            // 7 light off
+            yield return StartCoroutine(TurnOffLights(7 * timeMultiplier));
+            StartCoroutine(MorseCode());
         }
-        // 7 light off
-        yield return StartCoroutine(TurnOffLights(7 * timeMultiplier));
-        StartCoroutine(MorseCode());
     }
 
     private IEnumerator TurnOnLights(float time)
