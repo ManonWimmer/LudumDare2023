@@ -37,18 +37,32 @@ public class FPSController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         interactPressed = InputManager.GetInstance().GetInteractPressed();
-        if (Physics.Raycast(ray, out hit, 100) && interactPressed)
+        if (!GetComponent<ObjectInspection>().IsInspecting)
         {
-            Transform tempTransform;
-            tempTransform = hit.transform;
-
-            if(tempTransform.gameObject.CompareTag("Drawer"))
+            if (Physics.Raycast(ray, out hit, 100) && interactPressed)
             {
-                Debug.Log("DRAWER");
-                tempTransform.gameObject.GetComponent<Drawer>().ToggleDrawer();
+                Debug.DrawRay(Camera.main.transform.position, ray.direction * hit.distance, Color.yellow);
+
+                Transform tempTransform;
+                tempTransform = hit.transform;
+
+                if (tempTransform.gameObject.CompareTag("Drawer"))
+                {
+                    Debug.Log("DRAWER");
+                    tempTransform.gameObject.GetComponent<Drawer>().ToggleDrawer();
+                }
+                else if (tempTransform.gameObject.CompareTag("Interactive"))
+                {
+                    Debug.Log("Interactive");
+                    GetComponent<ObjectInspection>().InspectObject(tempTransform.gameObject);
+                }
             }
-            // else if compare tag interactive
         }
+        else
+        {
+            GetComponent<ObjectInspection>().InspectObjectEnd();
+        }
+        
 
         Vector3 forward = transform.TransformDirection(Vector3.forward);
         Vector3 right = transform.TransformDirection(Vector3.right);
