@@ -9856,6 +9856,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23000012391829230, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e08dd7ccb21aa349ab9b62b38b512d2, type: 2}
+    - target: {fileID: 23000012858387064, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33e992f3ec3e8ac48bed243d7043ef30, type: 2}
     - target: {fileID: 114000011147885668, guid: 25ac8df39008677458a8a3b632bde8c9,
         type: 3}
       propertyPath: SendToGameObjects.Array.size
@@ -10328,6 +10338,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23000012391829230, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e08dd7ccb21aa349ab9b62b38b512d2, type: 2}
+    - target: {fileID: 23000012858387064, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33e992f3ec3e8ac48bed243d7043ef30, type: 2}
     - target: {fileID: 114000011147885668, guid: 25ac8df39008677458a8a3b632bde8c9,
         type: 3}
       propertyPath: SendToGameObjects.Array.size
@@ -10578,6 +10598,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23000012391829230, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e08dd7ccb21aa349ab9b62b38b512d2, type: 2}
+    - target: {fileID: 23000012858387064, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33e992f3ec3e8ac48bed243d7043ef30, type: 2}
     - target: {fileID: 114000011147885668, guid: 25ac8df39008677458a8a3b632bde8c9,
         type: 3}
       propertyPath: SendToGameObjects.Array.size
@@ -19233,6 +19263,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23000012391829230, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e08dd7ccb21aa349ab9b62b38b512d2, type: 2}
+    - target: {fileID: 23000012858387064, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33e992f3ec3e8ac48bed243d7043ef30, type: 2}
     - target: {fileID: 114000011147885668, guid: 25ac8df39008677458a8a3b632bde8c9,
         type: 3}
       propertyPath: SendToGameObjects.Array.size
@@ -26603,6 +26643,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23000012391829230, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e08dd7ccb21aa349ab9b62b38b512d2, type: 2}
+    - target: {fileID: 23000012858387064, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33e992f3ec3e8ac48bed243d7043ef30, type: 2}
     - target: {fileID: 114000011147885668, guid: 25ac8df39008677458a8a3b632bde8c9,
         type: 3}
       propertyPath: SendToGameObjects.Array.size
@@ -29343,6 +29393,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23000012391829230, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e08dd7ccb21aa349ab9b62b38b512d2, type: 2}
+    - target: {fileID: 23000012858387064, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33e992f3ec3e8ac48bed243d7043ef30, type: 2}
     - target: {fileID: 114000011147885668, guid: 25ac8df39008677458a8a3b632bde8c9,
         type: 3}
       propertyPath: SendToGameObjects.Array.size
@@ -30809,6 +30869,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23000012391829230, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e08dd7ccb21aa349ab9b62b38b512d2, type: 2}
+    - target: {fileID: 23000012858387064, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33e992f3ec3e8ac48bed243d7043ef30, type: 2}
     - target: {fileID: 114000011147885668, guid: 25ac8df39008677458a8a3b632bde8c9,
         type: 3}
       propertyPath: SendToGameObjects.Array.size
@@ -36566,6 +36636,16 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 23000012391829230, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 3e08dd7ccb21aa349ab9b62b38b512d2, type: 2}
+    - target: {fileID: 23000012858387064, guid: 25ac8df39008677458a8a3b632bde8c9,
+        type: 3}
+      propertyPath: m_Materials.Array.data[2]
+      value: 
+      objectReference: {fileID: 2100000, guid: 33e992f3ec3e8ac48bed243d7043ef30, type: 2}
     - target: {fileID: 114000011147885668, guid: 25ac8df39008677458a8a3b632bde8c9,
         type: 3}
       propertyPath: SendToGameObjects.Array.size
