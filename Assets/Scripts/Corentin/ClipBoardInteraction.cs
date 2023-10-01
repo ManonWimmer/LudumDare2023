@@ -4,6 +4,14 @@ using UnityEngine;
 
 public class ClipBoardInteraction : MonoBehaviour
 {
+
+
+
+    public void OpenClipBoard()
+    {
+
+    }
+
     // Start is called before the first frame update
     void Start()
     {

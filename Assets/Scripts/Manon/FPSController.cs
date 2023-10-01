@@ -59,6 +59,11 @@ public class FPSController : MonoBehaviour
                     Debug.Log("Interactive");
                     GetComponent<ObjectInspection>().InspectObject(tempTransform.gameObject);
                 }
+                else if (tempTransform.gameObject.CompareTag("ClipBoard"))
+                {
+                    Debug.Log("ClipBoard");
+                    GetComponent<ClipBoardInteraction>().OpenClipBoard();
+                }
             }
         }
         
