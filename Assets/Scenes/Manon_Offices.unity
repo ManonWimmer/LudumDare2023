@@ -7069,6 +7069,8 @@ MonoBehaviour:
   - {fileID: 1023278988}
   - {fileID: 951317018}
   lightsOn: 1
+  morseCode: SOS
+  timeMultiplier: 1
 --- !u!4 &376711448
 Transform:
   m_ObjectHideFlags: 0
