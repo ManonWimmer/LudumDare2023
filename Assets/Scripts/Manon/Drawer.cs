@@ -24,6 +24,7 @@ public class Drawer : MonoBehaviour
     private float yVelocity = 0f;
 
     [SerializeField] DrawerType drawerType;
+    public bool canBeOpened = true;
 
     private bool isOpen = false;
     // ----- VARIABLES ----- //
@@ -91,25 +92,6 @@ public class Drawer : MonoBehaviour
 
     private IEnumerator SmoothRotatePosition(float initialRotY, float finalRotY)
     {
-        /*
-        Debug.Log("coroutine rotate");
-        Vector3 initialVector = new Vector3(transform.localRotation.x, initialRotY, transform.localRotation.z);
-        Vector3 finalVector = new Vector3(transform.localRotation.x, finalRotY, transform.localRotation.z);
-
-        float angleY = 0f;
-
-        Debug.Log(transform.localRotation.y);
-
-        while (Vector3.Distance(initialVector, finalVector) > 0.01f)
-        {
-            Debug.Log("while coroutine rotate");
-            angleY = Mathf.SmoothDampAngle(initialRotY, finalRotY, ref yVelocity, smoothTime * Time.deltaTime);
-            Debug.Log(transform.localRotation.y);
-            transform.localRotation = Quaternion.Euler(0, angleY, 0);
-            yield return null;
-        }
-        yield return null;
-        */
         Debug.Log("coroutine rotate");
 
         float startTime = Time.time;
@@ -126,7 +108,6 @@ public class Drawer : MonoBehaviour
             yield return null;
         }
 
-        // Assurez-vous que la rotation finale soit correcte
         transform.localRotation = Quaternion.Euler(0, finalRotY, 0);
     }
 }

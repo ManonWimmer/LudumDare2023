@@ -34,6 +34,8 @@ public class s3DBButton_password : MonoBehaviour {
 	GameObject[] buttons = new GameObject[10];
 	bool iWait;
 	string nSecret = "";
+	//
+	public bool passwordFound = false;
 
 	void Awake(){
 		// set array of buttons
@@ -52,12 +54,14 @@ public class s3DBButton_password : MonoBehaviour {
 	}
 
 	bool testSecret (){
-		for (int s = secret.Length; s < 4; s++){ 	// выравнил длину секрета до 4х
+		for (int s = secret.Length; s < 4; s++){ 	
 			secret +="0";
 		}
 
 		secret = secret.Substring(0, 4);
 		bool b = secret == nSecret;
+		passwordFound = b;
+		Debug.Log(passwordFound);
 
 		return b;
 	}
@@ -114,7 +118,6 @@ public class s3DBButton_password : MonoBehaviour {
 	}	
 // Обновить информер
 	void informerUpdate(int length, int sybol){
-		
 		if (length == 1) {
 			informer.dot1[0].SetActive (false);
 			informer.dot2[0].SetActive (true);

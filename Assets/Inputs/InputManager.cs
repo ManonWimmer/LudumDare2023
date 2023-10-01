@@ -10,6 +10,7 @@ public class InputManager : MonoBehaviour
     private float mouseXDelta;
     private float mouseYDelta;
     private bool interactPressed = false;
+    private bool flashlightPressed = false;
 
     [SerializeField]
     private PlayerInput playerInput;
@@ -82,6 +83,18 @@ public class InputManager : MonoBehaviour
         }
     }
 
+    public void FlashLightPressed(InputAction.CallbackContext context)
+    {
+        if (context.performed)
+        {
+            flashlightPressed = true;
+        }
+        else if (context.canceled)
+        {
+            flashlightPressed = false;
+        }
+    }
+
     public Vector2 GetMoveDirection()
     {
         return moveDirection;
@@ -101,6 +114,13 @@ public class InputManager : MonoBehaviour
     {
         bool result = interactPressed;
         interactPressed = false;
+        return result;
+    }
+
+    public bool GetFlashLightPressed()
+    {
+        bool result = flashlightPressed;
+        flashlightPressed = false;
         return result;
     }
 

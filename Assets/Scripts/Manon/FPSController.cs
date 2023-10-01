@@ -10,8 +10,8 @@ public class FPSController : MonoBehaviour
     [SerializeField] float walkSpeed = 6f;
     [SerializeField] float runSpeed = 12f;
     [SerializeField] float gravity = 10f;
-    [SerializeField] float lookSpeed = 2f;
-    [SerializeField] float lookXLimit = 45f;
+    [SerializeField] float lookSpeed = 0.2f;
+    [SerializeField] float lookXLimit = 80f;
     [SerializeField] float defaultHeight = 2f;
 
     private Vector3 moveDirection = Vector3.zero;
@@ -32,7 +32,7 @@ public class FPSController : MonoBehaviour
     {
         characterController = GetComponent<CharacterController>();
         Cursor.lockState = CursorLockMode.Locked;
-        //Cursor.visible = false;
+        Cursor.visible = false;
     }
 
     void Update()
@@ -40,6 +40,7 @@ public class FPSController : MonoBehaviour
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
         interactPressed = InputManager.GetInstance().GetInteractPressed();
+
         if (!IsInspecting)
         {
             if (Physics.Raycast(ray, out hit, 200) && interactPressed)
@@ -52,7 +53,8 @@ public class FPSController : MonoBehaviour
                 if (tempTransform.gameObject.CompareTag("Drawer"))
                 {
                     Debug.Log("DRAWER");
-                    tempTransform.gameObject.GetComponent<Drawer>().ToggleDrawer();
+                    if (tempTransform.gameObject.GetComponent<Drawer>().canBeOpened)
+                        tempTransform.gameObject.GetComponent<Drawer>().ToggleDrawer();
                 }
                 else if (tempTransform.gameObject.CompareTag("Interactive"))
                 {
