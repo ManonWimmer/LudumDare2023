@@ -5,9 +5,10 @@ using UnityEngine;
 using System.Collections;
 using s3DBakers.Buttons;
 
-public class s3DBButton_sender : MonoBehaviour {
+public class s3DBButton_senderGame : MonoBehaviour {
 	
 	public str3DdBbReceiver[] SendToGameObjects;
+	[SerializeField] private ButtonLightGame buttonLightGame;
 
 	public void SendToObjects(){
 		str3DBbMessage msg;
@@ -21,8 +22,9 @@ public class s3DBButton_sender : MonoBehaviour {
 
 			SendToGameObjects [c].receiver.SendMessage ("button", msg);
 			Debug.Log("button");
-				
-			}
+			buttonLightGame.ButtonPressed();
+
+            }
 	}
 
 //Just for test

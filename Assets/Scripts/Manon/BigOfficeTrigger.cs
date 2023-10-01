@@ -7,6 +7,7 @@ public class BigOfficeTrigger : MonoBehaviour
 
     [SerializeField] OpenOffice openOffice;
     [SerializeField] LightsOnOff lightsOnOff;
+    [SerializeField] AllLightsGame allLightsGame;
     private bool canBeToggled = true;
     private bool playerLocked = false;
 
@@ -22,6 +23,7 @@ public class BigOfficeTrigger : MonoBehaviour
                 canBeToggled = false;
                 playerLocked = true;
                 lightsOnOff.StopMorse();
+                allLightsGame.InitializeLightsGame();
             }
         }
     }

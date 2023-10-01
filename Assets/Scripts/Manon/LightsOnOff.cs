@@ -156,7 +156,7 @@ public class LightsOnOff : MonoBehaviour
 
         for (int i = 0; i < allLightsDefaultOn.Count; i++)
         {
-            Material currentMaterial = allLightsDefaultOn[i].GetComponent<Renderer>().material;
+            //Material currentMaterial = allLightsDefaultOn[i].GetComponent<Renderer>().material;
 
             allLightsDefaultOn[i].GetComponent<Renderer>().material = lightsOffMaterial;
 
@@ -179,7 +179,7 @@ public class LightsOnOff : MonoBehaviour
     {
         for(int i = 0; i < allLightsDefaultOn.Count; i++)
         {
-            Material currentMaterial = allLightsDefaultOn[i].GetComponent<Renderer>().material;
+            //Material currentMaterial = allLightsDefaultOn[i].GetComponent<Renderer>().material;
 
             // Change material on / off :
             if (!lightsOn)

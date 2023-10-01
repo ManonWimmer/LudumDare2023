@@ -47,7 +47,7 @@ public class Drawer : MonoBehaviour
 
     private void OpenDrawer()
     {
-        Debug.Log("open");
+        //Debug.Log("open");
         if (drawerType == DrawerType.Pull)
         {
             StartCoroutine(SmoothChangePosition(initialClosedZPosition, finalClosedZPosition));
@@ -60,7 +60,7 @@ public class Drawer : MonoBehaviour
 
     private void CloseDrawer()
     {
-        Debug.Log("close");
+        //Debug.Log("close");
         if (drawerType == DrawerType.Pull)
         {
             StartCoroutine(SmoothChangePosition(finalClosedZPosition, initialClosedZPosition));
@@ -73,7 +73,7 @@ public class Drawer : MonoBehaviour
 
     private IEnumerator SmoothChangePosition(float initialPosZ, float finalPosZ)
     {
-        Debug.Log("coroutine pull");
+        //Debug.Log("coroutine pull");
         Vector3 initialVector = new Vector3(transform.localPosition.x, transform.localPosition.y, initialPosZ);
         Vector3 finalVector = new Vector3(transform.localPosition.x, transform.localPosition.y, finalPosZ);
 
@@ -81,7 +81,7 @@ public class Drawer : MonoBehaviour
 
         while (Vector3.Distance(initialVector, finalVector) > 0.01f)
         {
-            Debug.Log("while coroutine pull");
+            //Debug.Log("while coroutine pull");
             initialVector = Vector3.SmoothDamp(initialVector, finalVector, ref velocity, smoothTimePull * Time.deltaTime);
             Debug.Log(transform.localPosition.z);
             transform.localPosition = initialVector;
@@ -92,14 +92,14 @@ public class Drawer : MonoBehaviour
 
     private IEnumerator SmoothRotatePosition(float initialRotY, float finalRotY)
     {
-        Debug.Log("coroutine rotate");
+        //Debug.Log("coroutine rotate");
 
         float startTime = Time.time;
         float elapsedTime = 0f;
 
         while (elapsedTime < smoothTimeRotate)
         {
-            Debug.Log("while coroutine rotate");
+            //Debug.Log("while coroutine rotate");
             float t = elapsedTime / smoothTimeRotate;
             float angleY = Mathf.LerpAngle(initialRotY, finalRotY, t);
             transform.localRotation = Quaternion.Euler(0, angleY, 0);
