@@ -2,39 +2,43 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class passwordChest : MonoBehaviour
 {
+    [SerializeField] Collider Collider;
+    [SerializeField] GameObject canvas;
+    public TMP_InputField inputField;
+    private string userInput;
+
     private void Start()
     {
         canvas.SetActive(false);
+        if (inputField != null)
+        {
+            inputField.onValueChanged.AddListener(UpdateUserInput);
+        }
     }
-    [SerializeField] Collider Collider;
-    [SerializeField] GameObject canvas;
-    [SerializeField] FPSController fpsController;
-    [SerializeField] InputField passwordInput;
+    
 
     private void OnTriggerEnter(Collider other)
     {
         canvas.SetActive(true);
-        fpsController.enabled = false;
         Cursor.lockState = CursorLockMode.None;
-        string playerPassword= passwordInput.text.ToString();
-        Debug.Log(testPassword(playerPassword));
     }
     private void OnTriggerExit(Collider other)
     {
         canvas.SetActive(false);
         Cursor.lockState = CursorLockMode.Locked;
     }
-    bool testPassword(string password)
-    {
-        if(password == "792")
-        {
-            return true;
-        }
-        return false;
-    }
-     
     
+    private void UpdateUserInput(string newText)
+    {
+        userInput = newText;
+        if (userInput == "792")
+        {
+            Debug.Log("trouver");
+        }
+    }
+
 }
