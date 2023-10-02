@@ -28,6 +28,8 @@ public class ObjectInspection : MonoBehaviour
 
     [SerializeField] private ClipBoardInteraction _clipBoardInteraction;
 
+    [SerializeField] private ObjectParentAdaptation _objectParentAdaptation;
+
     //[SerializeField] private bool inspectionPressed;
 
     //private TakeObject takeObject;
@@ -95,8 +97,7 @@ public class ObjectInspection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _sizeCorrection = _sizeCorrection
-            ;
+        _sizeCorrection = _sizeCorrection * _objectParentAdaptation.DiagCoeff;
 
         _fpsController = GetComponent<FPSController>();
 

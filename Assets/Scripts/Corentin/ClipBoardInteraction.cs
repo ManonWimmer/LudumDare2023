@@ -33,7 +33,7 @@ public class ClipBoardInteraction : MonoBehaviour
 
     private bool _canChange;
 
-
+    [SerializeField] private SoundManagerInterrogationRoom _soundManagerinterrogation;
 
     //properties
     public bool IsOpen { get => _isOpen; set => _isOpen = value; }
@@ -65,6 +65,8 @@ public class ClipBoardInteraction : MonoBehaviour
 
             Debug.Log(Cursor.lockState);
 
+            _soundManagerinterrogation.ClipBoardSound();
+
             StartCoroutine(ClipBoardMod());
         }
 
@@ -88,6 +90,7 @@ public class ClipBoardInteraction : MonoBehaviour
 
         Debug.Log("fin modification ClipBoard");
 
+        _soundManagerinterrogation.ClipBoardSound();
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -95,6 +98,7 @@ public class ClipBoardInteraction : MonoBehaviour
 
     public void NextInfo(TextMeshProUGUI info, int i)
     {
+        _soundManagerinterrogation.TickSound();
         switch (i)
         {
             case 1:
@@ -175,6 +179,8 @@ public class ClipBoardInteraction : MonoBehaviour
 
     public void LastInfo(TextMeshProUGUI info, int i)
     {
+        _soundManagerinterrogation.TickSound();
+
         switch (i)
         {
             case 1:
@@ -349,7 +355,7 @@ public class ClipBoardInteraction : MonoBehaviour
             }
 
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 CloseClipBoard();
             }
