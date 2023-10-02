@@ -95,6 +95,9 @@ public class ObjectInspection : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        _sizeCorrection = _sizeCorrection
+            ;
+
         _fpsController = GetComponent<FPSController>();
 
         //takeObject = GetComponent<TakeObject>();
