@@ -1392,59 +1392,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1867834277}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &849863660
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 1001452116893468, guid: d059905696cb8484f904d65ce5f61998, type: 3}
-      propertyPath: m_Name
-      value: Candle Holder Wall (3)
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153545992916110, guid: d059905696cb8484f904d65ce5f61998, type: 3}
-      propertyPath: m_RootOrder
-      value: 509
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153545992916110, guid: d059905696cb8484f904d65ce5f61998, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -1.2942009
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153545992916110, guid: d059905696cb8484f904d65ce5f61998, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0.111246586
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153545992916110, guid: d059905696cb8484f904d65ce5f61998, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: -0.10820007
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153545992916110, guid: d059905696cb8484f904d65ce5f61998, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 0.70710784
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153545992916110, guid: d059905696cb8484f904d65ce5f61998, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153545992916110, guid: d059905696cb8484f904d65ce5f61998, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0.70710576
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153545992916110, guid: d059905696cb8484f904d65ce5f61998, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4153545992916110, guid: d059905696cb8484f904d65ce5f61998, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 90.00001
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: d059905696cb8484f904d65ce5f61998, type: 3}
 --- !u!4 &851471671 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4139551262461234, guid: 5fab5294b8b14fb4d87ac8e2369737f5,
@@ -3109,7 +3056,6 @@ SceneRoots:
   m_Roots:
   - {fileID: 1755732708}
   - {fileID: 271207637}
-  - {fileID: 849863660}
   - {fileID: 1794996753}
   - {fileID: 1794261207}
   - {fileID: 1920051934}
