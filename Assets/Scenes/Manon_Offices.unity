@@ -7772,7 +7772,7 @@ MonoBehaviour:
   morseCodeList:
   - GAME
   timeMultiplier: 0.5
-  flickerTime: 0.25
+  flickerTime: 0.5
   whiteLightColor: {r: 1, g: 0.85490197, b: 0.69803923, a: 0}
   redLightColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!4 &376711448
@@ -16540,6 +16540,8 @@ MonoBehaviour:
   lightsOnOff: {fileID: 376711447}
   doorTV: {fileID: 735534249}
   doorOffices: {fileID: 1945664652}
+  playerAudioSource: {fileID: 162354369}
+  alarmSound: {fileID: 8300000, guid: ba2771f764487e8499ee5bb2954c5c53, type: 3}
 --- !u!4 &831310731
 Transform:
   m_ObjectHideFlags: 0

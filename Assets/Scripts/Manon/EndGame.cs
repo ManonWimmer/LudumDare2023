@@ -8,7 +8,8 @@ public class EndGame : MonoBehaviour
     [SerializeField] LightsOnOff lightsOnOff;
     [SerializeField] Drawer doorTV;
     [SerializeField] Drawer doorOffices;
-
+    [SerializeField] AudioSource playerAudioSource;
+    [SerializeField] AudioClip alarmSound;
 
     public void OnGameLightsEnd()
     {
@@ -17,6 +18,11 @@ public class EndGame : MonoBehaviour
         // Close doors :
         doorTV.ToggleDrawer();
         doorOffices.ToggleDrawer();
+
+        // ALARM 
+        playerAudioSource.clip = alarmSound;
+        playerAudioSource.Play();
+
 
         // mettres TOUTES les lights en flicker
         lightsOnOff.StartFlickerLights();
