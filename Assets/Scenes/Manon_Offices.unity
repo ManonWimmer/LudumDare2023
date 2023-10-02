@@ -7772,6 +7772,8 @@ MonoBehaviour:
   - GAME
   timeMultiplier: 0.5
   flickerTime: 0.25
+  whiteLightColor: {r: 1, g: 0.85490197, b: 0.69803923, a: 0}
+  redLightColor: {r: 1, g: 0, b: 0, a: 0}
 --- !u!4 &376711448
 Transform:
   m_ObjectHideFlags: 0

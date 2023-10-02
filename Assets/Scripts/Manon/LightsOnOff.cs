@@ -29,8 +29,13 @@ public class LightsOnOff : MonoBehaviour
 
     private bool isMorseRunning = true;
 
+    [SerializeField] Color whiteLightColor;
+    [SerializeField] Color redLightColor;
+
     public bool IsMorseRunning { get => isMorseRunning; private set => isMorseRunning = value; }
     public bool LightsOn { get => lightsOn; private set => lightsOn = value; }
+
+    
 
     // ----- VARIABLES ----- //
 
@@ -172,7 +177,16 @@ public class LightsOnOff : MonoBehaviour
 
     public void StartFlickerLights()
     {
+        PutLightsRedColor();
         StartCoroutine(FlickerLights());
+    }
+
+    private void PutLightsRedColor()
+    {
+        for (int i = 0; i < allLightsDefaultOn.Count; i++)
+        {
+            allLightsDefaultOn[i].GetComponentInChildren<Light>().color = redLightColor;
+        }
     }
 
     private IEnumerator FlickerLights()
