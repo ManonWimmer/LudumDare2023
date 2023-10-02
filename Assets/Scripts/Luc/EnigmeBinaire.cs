@@ -11,7 +11,7 @@ public class EnigmeBinaire : MonoBehaviour
     private string codePlayer="";
     [SerializeField] TextMeshProUGUI textMeshPro;
     [SerializeField] TextMeshProUGUI textMeshProPW;
-
+    [SerializeField] public bool finPartie = false;
     public void CodePLayer(string chiffre)
     {
         codePlayer += chiffre;
@@ -64,6 +64,7 @@ public class EnigmeBinaire : MonoBehaviour
                 StartCoroutine(MyCoroutine1());
                 IEnumerator MyCoroutine1()
                 {
+                    finPartie = true;
                     yield return new WaitForSeconds(1.0f);
                     textMeshProPW.text = "Open";
                     
