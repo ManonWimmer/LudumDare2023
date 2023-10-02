@@ -23,6 +23,8 @@ public class WinVerificationInterogation : MonoBehaviour
 
     private bool _hasWinInterogation;
 
+    [SerializeField] private SoundManagerInterrogationRoom _soundManagerInterrogationRoom;
+
     //properties
 
 
@@ -31,7 +33,7 @@ public class WinVerificationInterogation : MonoBehaviour
     {
         if ((_weapon == _weaponAnswer) && (_suspect == _suspectAnswer) && (_place == _placeAnswer))
         {
-            Debug.Log("j'ai gagné");
+            //Debug.Log("j'ai gagné");
             _hasWinInterogation = true;
 
             _clipBoardInteraction.CanChange = false;
@@ -40,11 +42,13 @@ public class WinVerificationInterogation : MonoBehaviour
             _infoSuspect.color = Color.green;
             _infoPlace.color = Color.green;
 
+            _soundManagerInterrogationRoom.CorrectClipSound();
+
             return true;
         }
         else
         {
-            Debug.Log("j'ai pas encore gagné");
+            //Debug.Log("j'ai pas encore gagné");
             return false;
         }
     }
