@@ -12,6 +12,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Manon.unity
     guid: 04c62bc2769ce8f4c857d51143d81b07
   - enabled: 1
+    path: Assets/Scenes/MenuPrincipal.unity
+    guid: 81f65c8c0153ade4ba948b9e42b31952
+  - enabled: 1
     path: Assets/Laboratory and Lair/Scenes/Couloir1.unity
     guid: 6bdeeb3bf8efe7f49a12071894ba99f9
   - enabled: 1
