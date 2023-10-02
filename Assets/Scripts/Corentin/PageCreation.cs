@@ -6,15 +6,20 @@ public class PageCreation : MonoBehaviour
 {
     [SerializeField] private SoundManagerInterrogationRoom soundManagerInterrogation;
 
+    private bool _firstAppearance;
     // Start is called before the first frame update
     void Start()
     {
-        soundManagerInterrogation.PageSound();
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if(_firstAppearance)
+        {
+            _firstAppearance = false;
+            soundManagerInterrogation.PageSound();
+        }
     }
 }
