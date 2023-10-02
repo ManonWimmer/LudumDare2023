@@ -6,7 +6,7 @@ using UnityEngine;
 public class AllLightsGame : MonoBehaviour
 {
     [SerializeField] private List<LightGame> gameLights= new List<LightGame>();
-    private bool gameVictory = false;
+    [SerializeField] private bool gameVictory = false; // serialize juste pour tests
 
     public bool GameVictory { get => gameVictory; set => gameVictory = value; }
 
@@ -25,7 +25,7 @@ public class AllLightsGame : MonoBehaviour
         {
             if (!gameLights[i].GetLightOn())
             {
-                tempB = false;
+                //tempB = false; // Enlevé pour test
                 Debug.Log("victory false");
             }
         }
@@ -39,6 +39,11 @@ public class AllLightsGame : MonoBehaviour
 
     private void VictoryLights()
     {
+        for (int i = 0; i < gameLights.Count; i++)
+        {
+            gameLights[i].TurnOnLight();
+        }
+
         for (int i = 0; i < gameLights.Count; i++)
         {
             gameLights[i].StartFlickerLight();

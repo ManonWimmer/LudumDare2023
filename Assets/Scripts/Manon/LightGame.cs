@@ -16,6 +16,8 @@ public class LightGame : MonoBehaviour
     [SerializeField] AllLightsGame allLightsGame;
     private bool lightOn;
 
+    [SerializeField] private float flickerTime = 0.5f;
+
     public void StartGame()
     {
         lightOn = lightOnAtStart;
@@ -58,14 +60,16 @@ public class LightGame : MonoBehaviour
         }
     }
 
-    private void TurnOnLight()
+    public void TurnOnLight()
     {
+        lightOn = true;
         GetComponent<Renderer>().material = lightsOnMaterial;
         lightComp.enabled = lightOn;
     }
 
     private void TurnOffLight()
     {
+        lightOn = false;
         GetComponent<Renderer>().material = lightsOffMaterial;
         lightComp.enabled = lightOn;
     }
@@ -77,13 +81,12 @@ public class LightGame : MonoBehaviour
 
     private IEnumerator FlickerLight()
     {
+        Debug.Log("flicker light");
         ToggleLight();
 
-        lightOn = !lightOn;
+        yield return new WaitForSeconds(flickerTime);
 
-        yield return new WaitForSeconds(1f);
-
-        yield return FlickerLight();
+        yield return StartCoroutine(FlickerLight());
     }
 
 }

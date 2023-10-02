@@ -11,5 +11,6 @@ public class ButtonLightGame : MonoBehaviour
     {
         if (!allLightsGame.GameVictory) // Pas encore gagné -> il peut appuyer sur le bouton
             lightGame.ButtonLightPressed();
+
     }
 }
