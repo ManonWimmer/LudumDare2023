@@ -204,6 +204,11 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[1]
       value: 
       objectReference: {fileID: 2100000, guid: 2f78027997d016a4a9771a4065b1062d, type: 2}
+    - target: {fileID: 64545040069495070, guid: 387cd8a00446384499e3fe759732db41,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -370,6 +375,11 @@ PrefabInstance:
     - target: {fileID: 4561848417783602, guid: e35678e05eb59284eab23f750157922c, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 90.00001
+      objectReference: {fileID: 0}
+    - target: {fileID: 64805425473651910, guid: e35678e05eb59284eab23f750157922c,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -1895,8 +1905,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 3.0773125, y: 3.910319, z: 2.5860672}
-  m_Center: {x: -0.18395424, y: 1.4551598, z: -0.7930336}
+  m_Size: {x: 3.0773125, y: 3.910319, z: 1.1698074}
+  m_Center: {x: -0.18395424, y: 1.4551598, z: -0.08490372}
 --- !u!4 &1657745301 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4153545992916110, guid: d059905696cb8484f904d65ce5f61998,
