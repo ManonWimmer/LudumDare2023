@@ -14,7 +14,7 @@ public class LightsOnOff : MonoBehaviour
 
     [SerializeField] private List<GameObject> allLightsDefaultOn = new List<GameObject>();
 
-    [SerializeField] private bool lightsOn = false;
+    [SerializeField] private bool lightsOn = true;
 
     // MORSE
     [SerializeField] private List<String> morseCodeList = new List<String>();
@@ -28,6 +28,10 @@ public class LightsOnOff : MonoBehaviour
     private bool flickerLightOn;
 
     private bool isMorseRunning = true;
+
+    public bool IsMorseRunning { get => isMorseRunning; private set => isMorseRunning = value; }
+    public bool LightsOn { get => lightsOn; private set => lightsOn = value; }
+
     // ----- VARIABLES ----- //
 
     private void Start()
@@ -128,7 +132,8 @@ public class LightsOnOff : MonoBehaviour
 
         for (int i = 0; i < allLightsDefaultOn.Count; i++)
         {
-            Material currentMaterial = allLightsDefaultOn[i].GetComponent<Renderer>().material;
+
+            //Material currentMaterial = allLightsDefaultOn[i].GetComponent<Renderer>().material;
 
             allLightsDefaultOn[i].GetComponent<Renderer>().material = lightsOnMaterial;
             
@@ -138,7 +143,7 @@ public class LightsOnOff : MonoBehaviour
         // Reflet vert :
         refletVert.GetComponent<Light>().enabled = lightsOn;
 
-        lightsOn = !lightsOn;
+        //lightsOn = !lightsOn;
 
         yield return new WaitForSeconds(time);
     }
@@ -149,6 +154,7 @@ public class LightsOnOff : MonoBehaviour
 
         for (int i = 0; i < allLightsDefaultOn.Count; i++)
         {
+
             //Material currentMaterial = allLightsDefaultOn[i].GetComponent<Renderer>().material;
 
             allLightsDefaultOn[i].GetComponent<Renderer>().material = lightsOffMaterial;
@@ -159,7 +165,7 @@ public class LightsOnOff : MonoBehaviour
         // Reflet vert :
         refletVert.GetComponent<Light>().enabled = lightsOn;
 
-        lightsOn = !lightsOn;
+        //lightsOn = !lightsOn;
 
         yield return new WaitForSeconds(time);
     }
