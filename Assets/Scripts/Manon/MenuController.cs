@@ -17,6 +17,7 @@ public class MenuController : MonoBehaviour
         inputsMenu.SetActive(false);
 
         Cursor.lockState = CursorLockMode.None;
+        Cursor.visible = true;
     }
 
     public void OpenMainMenu()
