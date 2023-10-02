@@ -59,7 +59,7 @@ public class EnigmeBinaire : MonoBehaviour
                 textMeshPro.text = codePlayer;
             }
             
-            if(textMeshProPW.text=="206") 
+            if(textMeshProPW.text=="605") 
             {
                 StartCoroutine(MyCoroutine1());
                 IEnumerator MyCoroutine1()
@@ -69,7 +69,7 @@ public class EnigmeBinaire : MonoBehaviour
                     
                 }
                 Debug.Log("Win");
-            }else if(textMeshProPW.text.Length == 3 && textMeshProPW.text != "206")
+            }else if(textMeshProPW.text.Length == 3 && textMeshProPW.text != "605")
             {
                 StartCoroutine(MyCoroutine2());
                 IEnumerator MyCoroutine2()
