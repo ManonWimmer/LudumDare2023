@@ -39,11 +39,8 @@ public class ObjectParentAdaptation : MonoBehaviour
 
         //_coeffScreen = (_diagScreen * (-212f)) / (1920f / 1080f);
 
-    }
 
-    // Start is called before the first frame update
-    void Start()
-    {
+        //Test
         Debug.Log(Screen.width);
         Debug.Log(Screen.height);
 
@@ -63,7 +60,16 @@ public class ObjectParentAdaptation : MonoBehaviour
 
         _diagCoeff = _diagScreen / _diagReference;
 
-        transform.localPosition = new Vector3(0, 0, -212 * _diagCoeff);
+        Debug.Log("DiagCoeff = " + _diagCoeff);
+
+        transform.localPosition = new Vector3(0, 0, -212f * _diagCoeff);
+
+    }
+
+    // Start is called before the first frame update
+    void Start()
+    {
+        
         
         
         //transform.localPosition /= (1920f/1080f) / _diagScreen;

@@ -22,7 +22,7 @@ public class ObjectInspection : MonoBehaviour
 
     private int _miminumInspection;
 
-   [SerializeField] private float _sizeCorrection;
+   [SerializeField] private float _sizeCorrection = 2.0f;
 
     [Header ("! Only in interogation room")]
 
@@ -98,6 +98,8 @@ public class ObjectInspection : MonoBehaviour
     void Start()
     {
         _sizeCorrection = _sizeCorrection * _objectParentAdaptation.DiagCoeff;
+
+        Debug.Log("Start debug = " + _objectParentAdaptation.DiagCoeff);
 
         _fpsController = GetComponent<FPSController>();
 
