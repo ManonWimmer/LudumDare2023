@@ -355,7 +355,7 @@ public class ClipBoardInteraction : MonoBehaviour
             }
 
 
-            if (Input.GetKeyDown(KeyCode.Escape))
+            if (Input.GetKeyDown(KeyCode.E))
             {
                 CloseClipBoard();
             }
