@@ -39,7 +39,24 @@ public class ObjectInspection : MonoBehaviour
     //Methods
     public void InspectObject(GameObject objectSelectionned)
     {
-        if (!_clipBoardInteraction.IsOpen)
+        if(_clipBoardInteraction != null)
+        {
+            if (!_clipBoardInteraction.IsOpen)
+            {
+                _isInspecting = true;
+
+                _inspectorCanvas.enabled = true;
+
+                GameObject instance = Instantiate(objectSelectionned, _parentObject.transform.position, Quaternion.identity, _parentObject.transform);
+                _objectInspected = instance;
+                _objectInspected.GetComponent<Collider>().isTrigger = true;
+                _objectInspected.transform.localScale *= 2;
+
+
+                StartCoroutine(Inspection());
+            }
+        }
+        else
         {
             _isInspecting = true;
 
@@ -53,6 +70,7 @@ public class ObjectInspection : MonoBehaviour
 
             StartCoroutine(Inspection());
         }
+        
     }
     public void InspectObjectEnd()
     {
