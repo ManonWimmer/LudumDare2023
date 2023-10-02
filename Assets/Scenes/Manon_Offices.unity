@@ -4135,6 +4135,7 @@ MonoBehaviour:
   - {fileID: 358649897}
   - {fileID: 1154248375}
   gameVictory: 0
+  endGame: {fileID: 831310730}
 --- !u!1001 &220716009
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7628,6 +7629,7 @@ MonoBehaviour:
   - CANT
   - ESCAPE
   timeMultiplier: 0.75
+  flickerTime: 0.25
 --- !u!4 &376711448
 Transform:
   m_ObjectHideFlags: 0
@@ -10737,7 +10739,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lightGame: {fileID: 1154248375}
-  allLightsGame: {fileID: 0}
+  allLightsGame: {fileID: 208689589}
 --- !u!114 &541524868
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10993,23 +10995,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000010326980508, guid: 241134e139809ac4fae0929a74181b9c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1000011129895496, guid: 241134e139809ac4fae0929a74181b9c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1000011491113760, guid: 241134e139809ac4fae0929a74181b9c, type: 3}
       propertyPath: m_Name
       value: Wood_Door_1_L (1)
       objectReference: {fileID: 0}
     - target: {fileID: 1000011491113760, guid: 241134e139809ac4fae0929a74181b9c, type: 3}
+      propertyPath: m_TagString
+      value: Drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011491113760, guid: 241134e139809ac4fae0929a74181b9c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1000013710344168, guid: 241134e139809ac4fae0929a74181b9c, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000010311741030, guid: 241134e139809ac4fae0929a74181b9c, type: 3}
       propertyPath: m_RootOrder
@@ -11050,7 +11056,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1000011491113760, guid: 241134e139809ac4fae0929a74181b9c,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 735534249}
   m_SourcePrefab: {fileID: 100100000, guid: 241134e139809ac4fae0929a74181b9c, type: 3}
 --- !u!1001 &565437660
 PrefabInstance:
@@ -11809,6 +11819,12 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000010537178658, guid: f634ae054d18bd54b86abf5eed2a1fbf,
     type: 3}
   m_PrefabInstance: {fileID: 1858663670}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &606571675 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000011491113760, guid: 241134e139809ac4fae0929a74181b9c,
+    type: 3}
+  m_PrefabInstance: {fileID: 562796743}
   m_PrefabAsset: {fileID: 0}
 --- !u!4 &607722013 stripped
 Transform:
@@ -14057,23 +14073,27 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1000011424551094, guid: 245de674b3894894899bd36fcf3956d8, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1000011776173692, guid: 245de674b3894894899bd36fcf3956d8, type: 3}
       propertyPath: m_Name
       value: Wood_Door_1_R (2)
       objectReference: {fileID: 0}
     - target: {fileID: 1000011776173692, guid: 245de674b3894894899bd36fcf3956d8, type: 3}
+      propertyPath: m_TagString
+      value: Drawer
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000011776173692, guid: 245de674b3894894899bd36fcf3956d8, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1000012775999804, guid: 245de674b3894894899bd36fcf3956d8, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1000013095583094, guid: 245de674b3894894899bd36fcf3956d8, type: 3}
       propertyPath: m_StaticEditorFlags
-      value: 69
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4000011647745974, guid: 245de674b3894894899bd36fcf3956d8, type: 3}
       propertyPath: m_RootOrder
@@ -14122,7 +14142,11 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1000011776173692, guid: 245de674b3894894899bd36fcf3956d8,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1945664652}
   m_SourcePrefab: {fileID: 100100000, guid: 245de674b3894894899bd36fcf3956d8, type: 3}
 --- !u!1001 &727028830
 PrefabInstance:
@@ -14311,6 +14335,24 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 562796743}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &735534249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 606571675}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f55c638f16bc44ebbbe7ed1cee4b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalClosedZPosition: 0
+  finalRotateYPosition: -90
+  smoothTimeRotate: 0.1
+  smoothTimePull: 5
+  drawerType: 1
+  canBeOpened: 0
 --- !u!4 &735672418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000011422191070, guid: 7038620e462212745b4069e517f70626,
@@ -16239,6 +16281,54 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1665520695}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &831310729
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 831310731}
+  - component: {fileID: 831310730}
+  m_Layer: 0
+  m_Name: EndGame
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &831310730
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831310729}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9345f4c695e43a46a79cbd354da4d51, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  openOffice: {fileID: 953176018}
+  lightsOnOff: {fileID: 376711447}
+  doorTV: {fileID: 735534249}
+  doorOffices: {fileID: 1945664652}
+--- !u!4 &831310731
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 831310729}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7207684, y: 1.6886992, z: 4.366363}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &832505951
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37788,6 +37878,30 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 231256137}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1945664648 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1000011776173692, guid: 245de674b3894894899bd36fcf3956d8,
+    type: 3}
+  m_PrefabInstance: {fileID: 724245729}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1945664652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1945664648}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4f55c638f16bc44ebbbe7ed1cee4b8f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  finalClosedZPosition: 0
+  finalRotateYPosition: -90
+  smoothTimeRotate: 0.1
+  smoothTimePull: 5
+  drawerType: 1
+  canBeOpened: 1
 --- !u!4 &1949177880 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012070329230, guid: 5f2610b99ed61f54c97a92b04252e777,
@@ -41305,3 +41419,4 @@ SceneRoots:
   - {fileID: 535833127}
   - {fileID: 254911446}
   - {fileID: 676649002}
+  - {fileID: 831310731}

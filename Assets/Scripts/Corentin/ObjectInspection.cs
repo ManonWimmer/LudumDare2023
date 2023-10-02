@@ -6,11 +6,11 @@ public class ObjectInspection : MonoBehaviour
 {
 
     //Fields
-    [Header ("Inspect Attributes")]
+    [Header("Inspect Attributes")]
 
     [SerializeField] private float _inspectSpeed;
 
-    private GameObject _objectInspected;
+    [SerializeField] private GameObject _objectInspected;
     [SerializeField] private bool _isInspecting;
     [SerializeField] private Canvas _inspectorCanvas;
     [SerializeField] private GameObject _parentObject;

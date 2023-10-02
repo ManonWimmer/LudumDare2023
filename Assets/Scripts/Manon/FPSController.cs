@@ -50,17 +50,18 @@ public class FPSController : MonoBehaviour
                 Transform tempTransform;
                 tempTransform = hit.transform;
 
-                if (tempTransform.gameObject.CompareTag("Drawer"))
+                if (tempTransform.gameObject.CompareTag("Interactive"))
+                {
+                    Debug.Log("Interactive");
+                    GetComponent<ObjectInspection>().InspectObject(tempTransform.gameObject);
+                }
+                else if (tempTransform.gameObject.CompareTag("Drawer"))
                 {
                     Debug.Log("DRAWER");
                     if (tempTransform.gameObject.GetComponent<Drawer>().canBeOpened)
                         tempTransform.gameObject.GetComponent<Drawer>().ToggleDrawer();
                 }
-                else if (tempTransform.gameObject.CompareTag("Interactive"))
-                {
-                    Debug.Log("Interactive");
-                    GetComponent<ObjectInspection>().InspectObject(tempTransform.gameObject);
-                }
+               
                 else if (tempTransform.gameObject.CompareTag("ClipBoard"))
                 {
                     Debug.Log("ClipBoard");
