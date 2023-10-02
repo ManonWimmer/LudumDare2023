@@ -22,6 +22,8 @@ public class ObjectInspection : MonoBehaviour
 
     private int _miminumInspection;
 
+   [SerializeField] private float _sizeCorrection;
+
     [Header ("! Only in interogation room")]
 
     [SerializeField] private ClipBoardInteraction _clipBoardInteraction;
@@ -50,7 +52,7 @@ public class ObjectInspection : MonoBehaviour
                 GameObject instance = Instantiate(objectSelectionned, _parentObject.transform.position, Quaternion.identity, _parentObject.transform);
                 _objectInspected = instance;
                 _objectInspected.GetComponent<Collider>().isTrigger = true;
-                _objectInspected.transform.localScale *= 2;
+                _objectInspected.transform.localScale *= _sizeCorrection;
 
 
                 StartCoroutine(Inspection());
@@ -65,7 +67,7 @@ public class ObjectInspection : MonoBehaviour
             GameObject instance = Instantiate(objectSelectionned, _parentObject.transform.position, Quaternion.identity, _parentObject.transform);
             _objectInspected = instance;
             _objectInspected.GetComponent<Collider>().isTrigger = true;
-            _objectInspected.transform.localScale *= 2;
+            _objectInspected.transform.localScale *= _sizeCorrection;
 
 
             StartCoroutine(Inspection());

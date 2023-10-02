@@ -2688,9 +2688,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _inspectSpeed: 1
+  _objectInspected: {fileID: 0}
   _isInspecting: 0
   _inspectorCanvas: {fileID: 1457853267}
   _parentObject: {fileID: 1350635356}
+  _sizeCorrection: 2
   _clipBoardInteraction: {fileID: 1431537548}
 --- !u!114 &1431537543
 MonoBehaviour:
