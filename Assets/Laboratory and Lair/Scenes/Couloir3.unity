@@ -2594,6 +2594,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7810033944473543180, guid: 971b85d25ab24d942a9655ce45299348,
         type: 3}
+      propertyPath: gravity
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 7810033944473543180, guid: 971b85d25ab24d942a9655ce45299348,
+        type: 3}
       propertyPath: defaultHeight
       value: 4
       objectReference: {fileID: 0}
