@@ -523,6 +523,25 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.88072896, y: 0.068332106, z: 1.2531118}
   m_Center: {x: 0.01213178, y: 0.041094795, z: 0.15955552}
+--- !u!114 &101415383
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 101415377}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 91ebafd33601b6d4f8e8b5e8f7cb0dbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _weapon: 
+  _suspect: 
+  _place: 
+  _infoWeapon: {fileID: 284180659}
+  _infoSuspect: {fileID: 817470157}
+  _infoPlace: {fileID: 1350346996}
+  _clipBoardInteraction: {fileID: 1431537548}
 --- !u!1 &185812488
 GameObject:
   m_ObjectHideFlags: 0
@@ -2767,14 +2786,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2dc4cc3f99ca8ef438862c462bd95c08, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inspectSpeed: 1
-  objectInspected: {fileID: 0}
-  isInspecting: 0
-  inspectorCanvas: {fileID: 1457853267}
-  parentObject: {fileID: 1350635356}
-  buttonTest: 0
-  miminumInspection: 0
-  clipBoardInteraction: {fileID: 1431537548}
+  _inspectSpeed: 1
+  _isInspecting: 0
+  _inspectorCanvas: {fileID: 1457853267}
+  _parentObject: {fileID: 1350635356}
+  _clipBoardInteraction: {fileID: 1431537548}
 --- !u!114 &1431537543
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2782,7 +2798,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 540569846}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 75fb3e31c27311445b8f4f065d24cef8, type: 3}
   m_Name: 
@@ -2816,20 +2832,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 513df330913b63e458460e8424f51be3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  clipBoard: {fileID: 101415377}
-  clipBoardInstance: {fileID: 0}
-  isOpen: 0
-  inspectorCanvas: {fileID: 1457853267}
-  parentObject: {fileID: 1350635356}
-  fpsController: {fileID: 1431537545}
-  scrollSpeed: 0.2
-  weapon: 
-  place: 
-  suspect: 
-  info1: {fileID: 284180659}
-  info2: {fileID: 817470157}
-  info3: {fileID: 1350346996}
-  positionClipBoardStart: {fileID: 1478054047}
+  _clipBoard: {fileID: 101415377}
+  _isOpen: 0
+  _inspectorCanvas: {fileID: 1457853267}
+  _parentObject: {fileID: 1350635356}
+  _fpsController: {fileID: 1431537545}
+  _scrollSpeed: 0.25
+  _info1: {fileID: 284180659}
+  _info2: {fileID: 817470157}
+  _info3: {fileID: 1350346996}
+  _positionClipBoardStart: {fileID: 1478054047}
 --- !u!1 &1452545226
 GameObject:
   m_ObjectHideFlags: 0
@@ -3456,6 +3468,10 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 101415380}
+    - targetCorrespondingSourceObject: {fileID: 8245059281936160151, guid: 70fc31bb0517bcd47bfe4c59816eb5ca,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 101415383}
   m_SourcePrefab: {fileID: 100100000, guid: 70fc31bb0517bcd47bfe4c59816eb5ca, type: 3}
 --- !u!1 &1643735221
 GameObject:

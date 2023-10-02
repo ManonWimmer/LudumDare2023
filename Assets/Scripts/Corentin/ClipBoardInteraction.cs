@@ -9,44 +9,42 @@ using UnityEngine.UI;
 public class ClipBoardInteraction : MonoBehaviour
 {
     //Fields
-    [SerializeField] private GameObject clipBoard;
-    [SerializeField] private GameObject clipBoardInstance;
+    [SerializeField] private GameObject _clipBoard;
+    private GameObject _clipBoardInstance;
 
-    [SerializeField] private bool isOpen;
+    [SerializeField] private bool _isOpen;
 
-    [SerializeField] private Canvas inspectorCanvas;
-    [SerializeField] private GameObject parentObject;
+    [SerializeField] private Canvas _inspectorCanvas;
+    [SerializeField] private GameObject _parentObject;
 
-    [SerializeField] private FPSController fpsController;
+    [SerializeField] private FPSController _fpsController;
 
-    [SerializeField] private float scrollSpeed;
-    private float positionY;
+    [SerializeField] private float _scrollSpeed;
+    private float _positionY;
 
-    [SerializeField] private string weapon;
-    [SerializeField] private string place;
-    [SerializeField] private string suspect;
-
-    [SerializeField] private TextMeshProUGUI info1;
-    [SerializeField] private TextMeshProUGUI info2;
-    [SerializeField] private TextMeshProUGUI info3;
+    [SerializeField] private TextMeshProUGUI _info1;
+    [SerializeField] private TextMeshProUGUI _info2;
+    [SerializeField] private TextMeshProUGUI _info3;
 
     //[SerializeField] private Vector3 originalPosition;
     //[SerializeField] private Quaternion originalRotation;
 
-    [SerializeField] private Transform positionClipBoardStart;
+    [SerializeField] private Transform _positionClipBoardStart;
+
+    private bool _canChange;
 
 
 
     //properties
-    public bool IsOpen { get => isOpen; set => isOpen = value; }
-
+    public bool IsOpen { get => _isOpen; set => _isOpen = value; }
+    public bool CanChange { get => _canChange; set => _canChange = value; }
 
     public void OpenClipBoard()
     {
-        if (!isOpen && !fpsController.IsInspecting)
+        if (!_isOpen && !_fpsController.IsInspecting)
         {
-            isOpen = true;
-            inspectorCanvas.enabled = true;
+            _isOpen = true;
+            _inspectorCanvas.enabled = true;
 
             //GameObject instance = Instantiate(clipBoard, parentObject.transform.position, Quaternion.identity, parentObject.transform);
             //clipBoardInstance = instance;
@@ -54,13 +52,13 @@ public class ClipBoardInteraction : MonoBehaviour
             //clipBoardInstance.transform.localRotation = Quaternion.Euler(90, 180, 0);
             //clipBoardInstance.transform.localScale *= 2;
 
-            clipBoard.transform.parent = parentObject.transform;
+            _clipBoard.transform.parent = _parentObject.transform;
 
-            clipBoard.transform.localPosition = new Vector3(0, 0, 0);
+            _clipBoard.transform.localPosition = new Vector3(0, 0, 0);
 
-            clipBoard.transform.localRotation = Quaternion.Euler(90, 180, 0);
+            _clipBoard.transform.localRotation = Quaternion.Euler(90, 180, 0);
 
-            clipBoard.transform.localScale *= 2;
+            _clipBoard.transform.localScale *= 2;
 
             Cursor.lockState = CursorLockMode.None;
             Cursor.visible = true;
@@ -74,16 +72,16 @@ public class ClipBoardInteraction : MonoBehaviour
 
     public void CloseClipBoard()
     {
-        isOpen = false;
-        inspectorCanvas.enabled = false;
+        _isOpen = false;
+        _inspectorCanvas.enabled = false;
 
-        clipBoard.transform.localScale /= 2;
+        _clipBoard.transform.localScale /= 2;
 
-        clipBoard.transform.parent = null;
+        _clipBoard.transform.parent = null;
 
-        clipBoard.transform.position = positionClipBoardStart.position;
+        _clipBoard.transform.position = _positionClipBoardStart.position;
 
-        clipBoard.transform.rotation = positionClipBoardStart.rotation;
+        _clipBoard.transform.rotation = _positionClipBoardStart.rotation;
         
         //Destroy(clipBoardInstance);
         //clipBoardInstance=null;
@@ -151,10 +149,10 @@ public class ClipBoardInteraction : MonoBehaviour
                 switch (info.text)
                 {
                     case "Bar":
-                        info.text = "Manor";
+                        info.text = "Mansion";
                         break;
 
-                    case "Manor":
+                    case "Mansion":
                         info.text = "Home";
                         break;
 
@@ -234,12 +232,12 @@ public class ClipBoardInteraction : MonoBehaviour
                         info.text = "Library";
                         break;
 
-                    case "Manor":
+                    case "Mansion":
                         info.text = "Bar";
                         break;
 
                     case "Home":
-                        info.text = "Manor";
+                        info.text = "Mansion";
                         break;
 
                     case "Laboratory":
@@ -260,40 +258,41 @@ public class ClipBoardInteraction : MonoBehaviour
 
         //originalRotation = Quaternion.Euler(transform.rotation.x, transform.rotation.y, transform.rotation.z);
 
-        clipBoard.transform.position = positionClipBoardStart.position;
+        _clipBoard.transform.position = _positionClipBoardStart.position;
 
-        clipBoard.transform.rotation = positionClipBoardStart.rotation;
+        _clipBoard.transform.rotation = _positionClipBoardStart.rotation;
+
+        _canChange = true;
+
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        fpsController = GetComponent<FPSController>();
+        _fpsController = GetComponent<FPSController>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        weapon = info1.text;
-        suspect = info2.text;
-        place = info3.text;
+        
     }
 
     IEnumerator ClipBoardMod()
     {
-        while (isOpen)
+        while (_isOpen)
         {
             float mouseX = InputManager.GetInstance().GetMouseXDelta();
             float mouseY = InputManager.GetInstance().GetMouseYDelta();
 
-            positionY += -mouseY * scrollSpeed * Time.deltaTime;
+            _positionY += -mouseY * _scrollSpeed * Time.deltaTime;
 
-            positionY = Mathf.Clamp(positionY, -0.5f, 0.5f);
+            _positionY = Mathf.Clamp(_positionY, -0.5f, 0.5f);
 
-            clipBoard.transform.localPosition = new Vector3 (0, positionY, 0);
+            _clipBoard.transform.localPosition = new Vector3 (0, _positionY, 0);
 
 
-            if (fpsController.InteractPressed)
+            if (_fpsController.InteractPressed && _canChange)
             {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -316,13 +315,13 @@ public class ClipBoardInteraction : MonoBehaviour
                             switch(button.name[button.name.Length - 1])
                             {
                                 case '1':
-                                    NextInfo(info1, 1);
+                                    NextInfo(_info1, 1);
                                     break;
                                 case '2':
-                                    NextInfo(info2, 2);
+                                    NextInfo(_info2, 2);
                                     break;
                                 case '3':
-                                    NextInfo(info3, 3);
+                                    NextInfo(_info3, 3);
                                     break;
                             }
                         }
@@ -331,13 +330,13 @@ public class ClipBoardInteraction : MonoBehaviour
                             switch (button.name[button.name.Length - 1])
                             {
                                 case '1':
-                                    LastInfo(info1, 1);
+                                    LastInfo(_info1, 1);
                                     break;
                                 case '2':
-                                    LastInfo(info2, 2);
+                                    LastInfo(_info2, 2);
                                     break;
                                 case '3':
-                                    LastInfo(info3, 3);
+                                    LastInfo(_info3, 3);
                                     break;
                             }
                         }
@@ -350,7 +349,7 @@ public class ClipBoardInteraction : MonoBehaviour
             }
 
 
-            if (Input.GetKeyDown(KeyCode.E))
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
                 CloseClipBoard();
             }

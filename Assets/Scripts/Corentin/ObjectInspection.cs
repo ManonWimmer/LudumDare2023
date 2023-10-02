@@ -6,47 +6,49 @@ public class ObjectInspection : MonoBehaviour
 {
 
     //Fields
-    [SerializeField] private float inspectSpeed;
+    [Header ("Inspect Attributes")]
 
-    [SerializeField] private GameObject objectInspected;
-    [SerializeField] private bool isInspecting;
-    [SerializeField] private Canvas inspectorCanvas;
-    [SerializeField] private GameObject parentObject;
+    [SerializeField] private float _inspectSpeed;
 
-    [SerializeField] private bool buttonTest;
+    private GameObject _objectInspected;
+    [SerializeField] private bool _isInspecting;
+    [SerializeField] private Canvas _inspectorCanvas;
+    [SerializeField] private GameObject _parentObject;
 
-    private float rotationObjectX;
-    private float rotationObjectY;
+    private float _rotationObjectX;
+    private float _rotationObjectY;
 
-    private FPSController fpsController;
+    private FPSController _fpsController;
 
-    [SerializeField] private int miminumInspection;
+    private int _miminumInspection;
 
-    [SerializeField] private ClipBoardInteraction clipBoardInteraction;
+    [Header ("! Only in interogation room")]
+
+    [SerializeField] private ClipBoardInteraction _clipBoardInteraction;
 
     //[SerializeField] private bool inspectionPressed;
 
-    private TakeObject takeObject;
+    //private TakeObject takeObject;
 
 
     //Properties
-    public GameObject ObjectInspected { get => objectInspected; set => objectInspected = value; }
-    public bool IsInspecting { get => isInspecting; set => isInspecting = value; }
+    public GameObject ObjectInspected { get => _objectInspected; set => _objectInspected = value; }
+    public bool IsInspecting { get => _isInspecting; set => _isInspecting = value; }
 
 
     //Methods
     public void InspectObject(GameObject objectSelectionned)
     {
-        if (!clipBoardInteraction.IsOpen)
+        if (!_clipBoardInteraction.IsOpen)
         {
-            isInspecting = true;
+            _isInspecting = true;
 
-            inspectorCanvas.enabled = true;
+            _inspectorCanvas.enabled = true;
 
-            GameObject instance = Instantiate(objectSelectionned, parentObject.transform.position, Quaternion.identity, parentObject.transform);
-            objectInspected = instance;
-            objectInspected.GetComponent<Collider>().isTrigger = true;
-            objectInspected.transform.localScale *= 2;
+            GameObject instance = Instantiate(objectSelectionned, _parentObject.transform.position, Quaternion.identity, _parentObject.transform);
+            _objectInspected = instance;
+            _objectInspected.GetComponent<Collider>().isTrigger = true;
+            _objectInspected.transform.localScale *= 2;
 
 
             StartCoroutine(Inspection());
@@ -54,78 +56,85 @@ public class ObjectInspection : MonoBehaviour
     }
     public void InspectObjectEnd()
     {
-        isInspecting = false;
-        inspectorCanvas.enabled = false;
+        _isInspecting = false;
+        _inspectorCanvas.enabled = false;
 
-        Destroy(objectInspected);
-        objectInspected = null;
+        Destroy(_objectInspected);
+        _objectInspected = null;
 
         Debug.Log("fin de l'inspection");
 
-
-        //mettre à jour les valeurs
     }
 
 
     private void Awake()
     {
-        inspectorCanvas.enabled = false;
+        _inspectorCanvas.enabled = false;
     }
 
     // Start is called before the first frame update
     void Start()
     {
-        fpsController = GetComponent<FPSController>();
+        _fpsController = GetComponent<FPSController>();
 
-        takeObject = GetComponent<TakeObject>();
+        //takeObject = GetComponent<TakeObject>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isInspecting || clipBoardInteraction.IsOpen)
+        if (_clipBoardInteraction != null)
         {
-            fpsController.IsInspecting = true;
+            if (_isInspecting || _clipBoardInteraction.IsOpen)
+            {
+                _fpsController.IsInspecting = true;
+            }
+            else
+            {
+                _fpsController.IsInspecting = false;
+            }
         }
         else
         {
-            fpsController.IsInspecting = false;
+            if (_isInspecting)
+            {
+                _fpsController.IsInspecting = true;
+            }
+            else
+            {
+                _fpsController.IsInspecting = false;
+            }
         }
-
-        if(buttonTest)
-        {
-            buttonTest = false;
-            InspectObject(objectInspected);
-        }
+        
 
         //takeObject.LeftPressed = InputManager.GetInstance().GetInteractPressed();
 
-        if(fpsController.InteractPressed)
+        if(_fpsController.InteractPressed)
         {
-            Debug.Log(fpsController.InteractPressed);
+            Debug.Log(_fpsController.InteractPressed);
         }
     }
 
     private IEnumerator Inspection()
     {
-        while (isInspecting)
+        while (_isInspecting)
         {
             float mouseX = InputManager.GetInstance().GetMouseXDelta();
             float mouseY = InputManager.GetInstance().GetMouseYDelta();
 
-            rotationObjectX += -mouseY * inspectSpeed;
-            rotationObjectY += -mouseX * inspectSpeed;
+            _rotationObjectX += -mouseY * _inspectSpeed;
+            _rotationObjectY += -mouseX * _inspectSpeed;
 
-            objectInspected.transform.localRotation = Quaternion.Euler(rotationObjectX, rotationObjectY, 0);
+            _objectInspected.transform.localRotation = Quaternion.Euler(_rotationObjectX, _rotationObjectY, 0);
 
-            if (miminumInspection > 1)
+            if (_miminumInspection > 1)
             {
                 InspectObjectEnd();
-                miminumInspection = 0;
+                _miminumInspection = 0;
             }
-            else if(fpsController.InteractPressed)
+            else if(_fpsController.InteractPressed)
             {
-                miminumInspection++ ;
+                _miminumInspection++ ;
             }
 
             yield return null;
