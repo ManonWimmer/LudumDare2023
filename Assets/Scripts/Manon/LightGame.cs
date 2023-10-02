@@ -73,7 +73,7 @@ public class LightGame : MonoBehaviour
         GetComponent<Renderer>().material = lightsOffMaterial;
         lightComp.enabled = lightOn;
     }
-
+    /*
     public void StartFlickerLight()
     {
         StartCoroutine(FlickerLight());
@@ -88,5 +88,6 @@ public class LightGame : MonoBehaviour
 
         yield return StartCoroutine(FlickerLight());
     }
+    */
 
 }

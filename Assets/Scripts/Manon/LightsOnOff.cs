@@ -16,14 +16,16 @@ public class LightsOnOff : MonoBehaviour
 
     [SerializeField] private bool lightsOn = false;
 
-    private float count = 0; // temp
-
     // MORSE
     [SerializeField] private List<String> morseCodeList = new List<String>();
 
     [SerializeField] private float timeMultiplier;
 
     private Dictionary<char, string> morseLetters = new Dictionary<char, string>();
+
+    // FLICKER
+    [SerializeField] private float flickerTime = 0.25f;
+    private bool flickerLightOn;
 
     private bool isMorseRunning = true;
     // ----- VARIABLES ----- //
@@ -35,16 +37,6 @@ public class LightsOnOff : MonoBehaviour
         isMorseRunning = true;
         StartCoroutine(MorseCode());
     }
-    
-    /*
-    Morse : 
-    - dico, ex : 'A' => ".-"
-    dot . => 1 * timeMultiplier light on 
-    dash - => 3 * timeMultiplier light on
-    between each . or - => 1*timeMultiplier light off
-    between full letter => 3*timeMultiplier light off
-    between complete word => 7*timeMultiplier lig
-     */
 
     private void InitializeMorseDico()
     {
@@ -131,6 +123,7 @@ public class LightsOnOff : MonoBehaviour
 
     private IEnumerator TurnOnLights(float time)
     {
+        Debug.Log("turn on lights");
         lightsOn = true;
 
         for (int i = 0; i < allLightsDefaultOn.Count; i++)
@@ -171,43 +164,27 @@ public class LightsOnOff : MonoBehaviour
         yield return new WaitForSeconds(time);
     }
 
-
-
-
-    // Clignoter lights pendant un count de fois (tester les lights)
-    private IEnumerator FlickeringLights()
+    public void StartFlickerLights()
     {
-        for(int i = 0; i < allLightsDefaultOn.Count; i++)
+        StartCoroutine(FlickerLights());
+    }
+
+    private IEnumerator FlickerLights()
+    {
+        Debug.Log(flickerLightOn);
+
+
+        if (!flickerLightOn)
         {
-            //Material currentMaterial = allLightsDefaultOn[i].GetComponent<Renderer>().material;
-
-            // Change material on / off :
-            if (!lightsOn)
-            {
-                allLightsDefaultOn[i].GetComponent<Renderer>().material = lightsOffMaterial;
-            }
-            else if (lightsOn)
-            {
-                allLightsDefaultOn[i].GetComponent<Renderer>().material = lightsOnMaterial;
-            }
-
-
-            // Turn light on / off :
-            allLightsDefaultOn[i].GetComponentInChildren<Light>().enabled = lightsOn;
+            yield return StartCoroutine(TurnOffLights(flickerTime));
         }
-        // Reflet vert :
-        refletVert.GetComponent<Light>().enabled = lightsOn;
-        
-        lightsOn = !lightsOn;
-
-        count++;
-
-        yield return new WaitForSeconds(1f);
-
-        if (count < 40)
+        else if (flickerLightOn)
         {
-            StartCoroutine(FlickeringLights());
+            yield return StartCoroutine(TurnOnLights(flickerTime));
         }
         
+
+        flickerLightOn = !flickerLightOn;
+        yield return StartCoroutine(FlickerLights());
     }
 }
