@@ -6,6 +6,9 @@ using UnityEngine;
 public class AllLightsGame : MonoBehaviour
 {
     [SerializeField] private List<LightGame> gameLights= new List<LightGame>();
+    private bool gameVictory = false;
+
+    public bool GameVictory { get => gameVictory; set => gameVictory = value; }
 
     public void InitializeLightsGame()
     {
@@ -29,6 +32,16 @@ public class AllLightsGame : MonoBehaviour
         if (tempB)
         {
             Debug.Log("victory");
+            gameVictory = true;
+            VictoryLights();
+        }
+    }
+
+    private void VictoryLights()
+    {
+        for (int i = 0; i < gameLights.Count; i++)
+        {
+            gameLights[i].StartFlickerLight();
         }
     }
 }

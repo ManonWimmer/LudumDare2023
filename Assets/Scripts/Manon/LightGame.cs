@@ -70,5 +70,20 @@ public class LightGame : MonoBehaviour
         lightComp.enabled = lightOn;
     }
 
+    public void StartFlickerLight()
+    {
+        StartCoroutine(FlickerLight());
+    }
+
+    private IEnumerator FlickerLight()
+    {
+        ToggleLight();
+
+        lightOn = !lightOn;
+
+        yield return new WaitForSeconds(1f);
+
+        yield return FlickerLight();
+    }
 
 }
