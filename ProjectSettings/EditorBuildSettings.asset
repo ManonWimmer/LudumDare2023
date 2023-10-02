@@ -26,4 +26,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Laboratory and Lair/Scenes/Luc.unity
     guid: d16fda4b2a6c1b94aa86a69f4732fc0c
+  - enabled: 1
+    path: Assets/Laboratory and Lair/Scenes/Couloir2.unity
+    guid: 357345a2a82a1694fb4bdfeea8d798c3
+  - enabled: 1
+    path: Assets/Laboratory and Lair/Scenes/Couloir3.unity
+    guid: c91b83df1e860c6449dd95f463955320
   m_configObjects: {}

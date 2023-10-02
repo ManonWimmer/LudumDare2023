@@ -24,6 +24,7 @@ public class BigOfficeTrigger : MonoBehaviour
                 playerLocked = true;
                 lightsOnOff.StopMorse();
                 allLightsGame.InitializeLightsGame();
+
             }
         }
     }
