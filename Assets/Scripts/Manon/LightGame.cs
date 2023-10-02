@@ -13,7 +13,7 @@ public class LightGame : MonoBehaviour
     [SerializeField] private LightGame leftLight;
     [SerializeField] private LightGame rightLight;
 
-
+    [SerializeField] AllLightsGame allLightsGame;
     private bool lightOn;
 
     public void StartGame()
@@ -30,12 +30,18 @@ public class LightGame : MonoBehaviour
         }
     }
 
+    public bool GetLightOn()
+    {
+        return lightOn;
+    }
+
     public void ButtonLightPressed()
     {
         ToggleLight();
         leftLight.ToggleLight();
         rightLight.ToggleLight();
-        // check si toutes les lights allumées
+
+        allLightsGame.CheckVictoryGame();
     }
 
     public void ToggleLight()

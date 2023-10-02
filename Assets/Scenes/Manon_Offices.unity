@@ -1296,6 +1296,7 @@ MonoBehaviour:
   lightComp: {fileID: 0}
   leftLight: {fileID: 0}
   rightLight: {fileID: 0}
+  allLightsGame: {fileID: 0}
 --- !u!4 &69080095 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013656116780, guid: 9f6928072818dc04d897ee3147f9c078,
@@ -1727,11 +1728,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 37405775}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1000013285430024, guid: 41b0902622eccdb40b33a8648e54a547,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 348738728}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b0902622eccdb40b33a8648e54a547, type: 3}
 --- !u!4 &105473882 stripped
 Transform:
@@ -6767,24 +6764,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 105473881}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &348738728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 348738724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c592d093a31fb4e976b980c714def7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightsOnMaterial: {fileID: 0}
-  lightsOffMaterial: {fileID: 0}
-  lightOnAtStart: 0
-  lightComp: {fileID: 0}
-  leftLight: {fileID: 0}
-  rightLight: {fileID: 0}
 --- !u!1001 &348993047
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7205,6 +7184,7 @@ MonoBehaviour:
   lightComp: {fileID: 1401987515}
   leftLight: {fileID: 1829227349}
   rightLight: {fileID: 1154248375}
+  allLightsGame: {fileID: 208689589}
 --- !u!4 &358687758 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010480409478, guid: 41b0902622eccdb40b33a8648e54a547,
@@ -9219,12 +9199,6 @@ MonoBehaviour:
   smoothTimePull: 5
   drawerType: 0
   canBeOpened: 1
---- !u!1 &468411793 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000013285430024, guid: 41b0902622eccdb40b33a8648e54a547,
-    type: 3}
-  m_PrefabInstance: {fileID: 913459868}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &470044701 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1000013933920094, guid: 98ca0eb4f4fc36747a0e2385880f8e3d,
@@ -9675,11 +9649,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 352581121}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1000013285430024, guid: 41b0902622eccdb40b33a8648e54a547,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1856391164}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b0902622eccdb40b33a8648e54a547, type: 3}
 --- !u!4 &486232643 stripped
 Transform:
@@ -17234,6 +17204,7 @@ MonoBehaviour:
   lightComp: {fileID: 0}
   leftLight: {fileID: 0}
   rightLight: {fileID: 0}
+  allLightsGame: {fileID: 0}
 --- !u!4 &881604412 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012842329014, guid: c5c91411c2e1fd14ba3bf9aa3bfba282,
@@ -18054,11 +18025,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1000013285430024, guid: 41b0902622eccdb40b33a8648e54a547,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 913459873}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b0902622eccdb40b33a8648e54a547, type: 3}
 --- !u!4 &913459869 stripped
 Transform:
@@ -18066,24 +18033,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 913459868}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &913459873
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 468411793}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c592d093a31fb4e976b980c714def7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightsOnMaterial: {fileID: 0}
-  lightsOffMaterial: {fileID: 0}
-  lightOnAtStart: 0
-  lightComp: {fileID: 0}
-  leftLight: {fileID: 0}
-  rightLight: {fileID: 0}
 --- !u!4 &921191779 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000010989911600, guid: 1f3ee64f0a7e3c245a03ab1101d3c053,
@@ -18628,11 +18577,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1771033628}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1000013285430024, guid: 41b0902622eccdb40b33a8648e54a547,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1977155794}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b0902622eccdb40b33a8648e54a547, type: 3}
 --- !u!4 &936594001 stripped
 Transform:
@@ -21035,6 +20980,7 @@ MonoBehaviour:
   lightComp: {fileID: 0}
   leftLight: {fileID: 0}
   rightLight: {fileID: 0}
+  allLightsGame: {fileID: 0}
 --- !u!1001 &1005851741
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21848,6 +21794,7 @@ MonoBehaviour:
   lightComp: {fileID: 844274912}
   leftLight: {fileID: 1865723095}
   rightLight: {fileID: 2121155288}
+  allLightsGame: {fileID: 208689589}
 --- !u!1001 &1050436181
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -23452,6 +23399,7 @@ MonoBehaviour:
   lightComp: {fileID: 69054182}
   leftLight: {fileID: 358649897}
   rightLight: {fileID: 1460695656}
+  allLightsGame: {fileID: 208689589}
 --- !u!4 &1154363115 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012142986822, guid: a103a68d996f18549bb4e7649c94b3e6,
@@ -24957,11 +24905,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1264132641}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1000013285430024, guid: 41b0902622eccdb40b33a8648e54a547,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1845293728}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b0902622eccdb40b33a8648e54a547, type: 3}
 --- !u!4 &1245532532 stripped
 Transform:
@@ -25924,12 +25868,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4000011422191070, guid: 7038620e462212745b4069e517f70626,
     type: 3}
   m_PrefabInstance: {fileID: 838519442}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &1312237009 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 1000013285430024, guid: 41b0902622eccdb40b33a8648e54a547,
-    type: 3}
-  m_PrefabInstance: {fileID: 1365904104}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1313412924
 PrefabInstance:
@@ -27104,11 +27042,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1000013285430024, guid: 41b0902622eccdb40b33a8648e54a547,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1365904109}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b0902622eccdb40b33a8648e54a547, type: 3}
 --- !u!4 &1365904105 stripped
 Transform:
@@ -27116,24 +27050,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1365904104}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1365904109
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1312237009}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c592d093a31fb4e976b980c714def7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightsOnMaterial: {fileID: 0}
-  lightsOffMaterial: {fileID: 0}
-  lightOnAtStart: 0
-  lightComp: {fileID: 0}
-  leftLight: {fileID: 0}
-  rightLight: {fileID: 0}
 --- !u!4 &1366373272 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000012851003700, guid: 9f7d3bce3fcc65e4bbfcb9389b499cad,
@@ -27876,6 +27792,7 @@ MonoBehaviour:
   lightComp: {fileID: 0}
   leftLight: {fileID: 0}
   rightLight: {fileID: 0}
+  allLightsGame: {fileID: 0}
 --- !u!1001 &1405000357
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28835,6 +28752,7 @@ MonoBehaviour:
   lightComp: {fileID: 0}
   leftLight: {fileID: 0}
   rightLight: {fileID: 0}
+  allLightsGame: {fileID: 0}
 --- !u!4 &1450711761 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000014117625510, guid: 98ca0eb4f4fc36747a0e2385880f8e3d,
@@ -29317,6 +29235,7 @@ MonoBehaviour:
   lightComp: {fileID: 1656453318}
   leftLight: {fileID: 1154248375}
   rightLight: {fileID: 1846910325}
+  allLightsGame: {fileID: 208689589}
 --- !u!1001 &1462029155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -32582,6 +32501,7 @@ MonoBehaviour:
   lightComp: {fileID: 0}
   leftLight: {fileID: 0}
   rightLight: {fileID: 0}
+  allLightsGame: {fileID: 0}
 --- !u!1 &1659897057
 GameObject:
   m_ObjectHideFlags: 0
@@ -35495,6 +35415,7 @@ MonoBehaviour:
   lightComp: {fileID: 880202311}
   leftLight: {fileID: 2121155288}
   rightLight: {fileID: 358649897}
+  allLightsGame: {fileID: 208689589}
 --- !u!1001 &1834777012
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35798,24 +35719,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 1245532531}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1845293728
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1845293724}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c592d093a31fb4e976b980c714def7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightsOnMaterial: {fileID: 0}
-  lightsOffMaterial: {fileID: 0}
-  lightOnAtStart: 0
-  lightComp: {fileID: 0}
-  leftLight: {fileID: 0}
-  rightLight: {fileID: 0}
 --- !u!1001 &1846498729
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -35891,6 +35794,7 @@ MonoBehaviour:
   lightComp: {fileID: 1004751523}
   leftLight: {fileID: 1460695656}
   rightLight: {fileID: 1865723095}
+  allLightsGame: {fileID: 208689589}
 --- !u!1001 &1847283067
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -36045,24 +35949,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 486232642}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1856391164
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1856391160}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c592d093a31fb4e976b980c714def7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightsOnMaterial: {fileID: 0}
-  lightsOffMaterial: {fileID: 0}
-  lightOnAtStart: 0
-  lightComp: {fileID: 0}
-  leftLight: {fileID: 0}
-  rightLight: {fileID: 0}
 --- !u!4 &1858302205 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013656116780, guid: 9f6928072818dc04d897ee3147f9c078,
@@ -36429,6 +36315,7 @@ MonoBehaviour:
   lightComp: {fileID: 1450218679}
   leftLight: {fileID: 1846910325}
   rightLight: {fileID: 1050172807}
+  allLightsGame: {fileID: 208689589}
 --- !u!1001 &1866262963
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -37551,11 +37438,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1672912284}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1000013285430024, guid: 41b0902622eccdb40b33a8648e54a547,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1903980420}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b0902622eccdb40b33a8648e54a547, type: 3}
 --- !u!4 &1903980416 stripped
 Transform:
@@ -37563,24 +37446,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1903980415}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1903980420
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 698096514}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c592d093a31fb4e976b980c714def7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightsOnMaterial: {fileID: 0}
-  lightsOffMaterial: {fileID: 0}
-  lightOnAtStart: 0
-  lightComp: {fileID: 0}
-  leftLight: {fileID: 0}
-  rightLight: {fileID: 0}
 --- !u!1001 &1912459084
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38815,24 +38680,6 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 936594000}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1977155794
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1977155790}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c592d093a31fb4e976b980c714def7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightsOnMaterial: {fileID: 0}
-  lightsOffMaterial: {fileID: 0}
-  lightOnAtStart: 0
-  lightComp: {fileID: 0}
-  leftLight: {fileID: 0}
-  rightLight: {fileID: 0}
 --- !u!1001 &1978173539
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38900,11 +38747,7 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1887660984}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1000013285430024, guid: 41b0902622eccdb40b33a8648e54a547,
-        type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1978173544}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 41b0902622eccdb40b33a8648e54a547, type: 3}
 --- !u!4 &1978173540 stripped
 Transform:
@@ -38912,24 +38755,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1978173539}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1978173544
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 305032170}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1c592d093a31fb4e976b980c714def7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lightsOnMaterial: {fileID: 0}
-  lightsOffMaterial: {fileID: 0}
-  lightOnAtStart: 0
-  lightComp: {fileID: 0}
-  leftLight: {fileID: 0}
-  rightLight: {fileID: 0}
 --- !u!4 &1978947043 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4000013334226878, guid: 427948473606d084e94dea8e60f341c0,
@@ -40945,6 +40770,7 @@ MonoBehaviour:
   lightComp: {fileID: 753513622}
   leftLight: {fileID: 1050172807}
   rightLight: {fileID: 1829227349}
+  allLightsGame: {fileID: 208689589}
 --- !u!1001 &2122360457
 PrefabInstance:
   m_ObjectHideFlags: 0

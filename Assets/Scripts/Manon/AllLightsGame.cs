@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Rendering;
 using UnityEngine;
 
 public class AllLightsGame : MonoBehaviour
@@ -12,6 +13,22 @@ public class AllLightsGame : MonoBehaviour
         for (int i = 0; i < gameLights.Count; i++)
         {
             gameLights[i].StartGame();
+        }
+    }
+    public void CheckVictoryGame()
+    {
+        bool tempB = true;
+        for (int i = 0; i < gameLights.Count; i++)
+        {
+            if (!gameLights[i].GetLightOn())
+            {
+                tempB = false;
+                Debug.Log("victory false");
+            }
+        }
+        if (tempB)
+        {
+            Debug.Log("victory");
         }
     }
 }
